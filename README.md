@@ -108,7 +108,7 @@ Holding connections open without reading the reply does not reach the limit eith
 
 ## The three proposed remedies
 
-The guide's snippet can take one of three remedies: keep `:location` as a placeholder, encode the interpolated values with `encodeURIComponent`, or return a `UrlTree`. [`app.routes.ts`](src/app/app.routes.ts) has one case for each, plus `case-rawquery`, which applies none, and [`scripts/cases.mjs`](scripts/cases.mjs) measures them under two requests: the report's, with the references in the `location` segment, and one with the references as plain query parameters. The guide's snippet ignores the query; the other four cases forward it, since a redirect drops the request's query, whether it returns a string or a `UrlTree`.
+The guide's snippet can take one of three remedies: keep `:location` as a placeholder, encode the interpolated values with `encodeURIComponent`, or return a `UrlTree`. [`app.routes.ts`](src/app/app.routes.ts) has one case for each, plus `case-rawquery`, which applies none, and [`scripts/cases.mjs`](scripts/cases.mjs) measures them under two requests: the report's, with the references in the `location` segment, and one with the references as plain query parameters. The guide's snippet ignores the query; the other four cases forward it, since an absolute redirect, a string that starts with `/` or any `UrlTree`, drops the request's query. A relative string keeps it but ignores its own.
 
 | Case                | Remedy                             |     Path request |    Query request |
 | ------------------- | ---------------------------------- | ---------------: | ---------------: |
@@ -118,7 +118,7 @@ The guide's snippet can take one of three remedies: keep `:location` as a placeh
 | `case-encode`       | `encodeURIComponent` on all values |         34,632 B | **32,101,028 B** |
 | `case-urltree`      | `Router#createUrlTree`             |         34,630 B |         31,976 B |
 
-`Location` at 16,000 B, each against an equal-size control ([`evidence/cases-4000-8000-16000.json`](evidence/cases-4000-8000-16000.json)). Both string remedies close the report's request but not the query one, where `case-encode` stays within 0.025% of `case-rawquery` and also reaches the V8 OOM with 3 concurrent requests at 256 MiB ([`case-encode`](evidence/threshold-256-16000-case-encode.json), [`case-rawquery`](evidence/threshold-256-16000-case-rawquery.json)). `case-urltree` serves all 24 the scan tries ([`case-urltree`](evidence/threshold-256-16000-case-urltree.json)).
+`Location` at 16,000 B, each against an equal-size control ([`evidence/cases-4000-8000-16000.json`](evidence/cases-4000-8000-16000.json)). Both string remedies close the report's request but not the query one, where `case-encode` stays within 0.025% of `case-rawquery` and also reaches the V8 OOM with 3 concurrent requests at 256 MiB ([`case-encode`](evidence/threshold-256-16000-case-encode.json), [`case-rawquery`](evidence/threshold-256-16000-case-rawquery.json)). `case-urltree` serves every step up to 24 concurrent requests, with no OOM ([`case-urltree`](evidence/threshold-256-16000-case-urltree.json)).
 
 ### Why encoding doesn't help
 
