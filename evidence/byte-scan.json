@@ -1,0 +1,1554 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "repeat": 60,
+  "baselineLocationBytes": 29,
+  "maxBytesOutPerByteIn": 3,
+  "bestBytes": [
+    "\"",
+    "'",
+    "+",
+    "/",
+    "<",
+    "=",
+    ">",
+    "?",
+    "[",
+    "\\",
+    "]",
+    "^",
+    "`",
+    "{",
+    "|",
+    "}"
+  ],
+  "rejectedCount": 160,
+  "rejectedStatuses": [
+    400
+  ],
+  "rows": [
+    {
+      "byte": 1,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 2,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 3,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 4,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 5,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 6,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 7,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 8,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 9,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 10,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 11,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 12,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 13,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 14,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 15,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 16,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 17,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 18,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 19,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 20,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 21,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 22,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 23,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 24,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 25,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 26,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 27,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 28,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 29,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 30,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 31,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 32,
+      "structural": true
+    },
+    {
+      "byte": 33,
+      "char": "!",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 34,
+      "char": "\"",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 35,
+      "structural": true
+    },
+    {
+      "byte": 36,
+      "char": "$",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 37,
+      "structural": true
+    },
+    {
+      "byte": 38,
+      "structural": true
+    },
+    {
+      "byte": 39,
+      "char": "'",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 40,
+      "char": "(",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 41,
+      "char": ")",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 42,
+      "char": "*",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 43,
+      "char": "+",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 44,
+      "char": ",",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 45,
+      "char": "-",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 46,
+      "char": ".",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 47,
+      "char": "/",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 48,
+      "char": "0",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 49,
+      "char": "1",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 50,
+      "char": "2",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 51,
+      "char": "3",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 52,
+      "char": "4",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 53,
+      "char": "5",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 54,
+      "char": "6",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 55,
+      "char": "7",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 56,
+      "char": "8",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 57,
+      "char": "9",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 58,
+      "char": ":",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 59,
+      "char": ";",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 60,
+      "char": "<",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 61,
+      "char": "=",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 62,
+      "char": ">",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 63,
+      "char": "?",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 64,
+      "char": "@",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 65,
+      "char": "A",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 66,
+      "char": "B",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 67,
+      "char": "C",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 68,
+      "char": "D",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 69,
+      "char": "E",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 70,
+      "char": "F",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 71,
+      "char": "G",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 72,
+      "char": "H",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 73,
+      "char": "I",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 74,
+      "char": "J",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 75,
+      "char": "K",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 76,
+      "char": "L",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 77,
+      "char": "M",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 78,
+      "char": "N",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 79,
+      "char": "O",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 80,
+      "char": "P",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 81,
+      "char": "Q",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 82,
+      "char": "R",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 83,
+      "char": "S",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 84,
+      "char": "T",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 85,
+      "char": "U",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 86,
+      "char": "V",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 87,
+      "char": "W",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 88,
+      "char": "X",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 89,
+      "char": "Y",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 90,
+      "char": "Z",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 91,
+      "char": "[",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 92,
+      "char": "\\",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 93,
+      "char": "]",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 94,
+      "char": "^",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 95,
+      "char": "_",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 96,
+      "char": "`",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 97,
+      "char": "a",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 98,
+      "char": "b",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 99,
+      "char": "c",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 100,
+      "char": "d",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 101,
+      "char": "e",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 102,
+      "char": "f",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 103,
+      "char": "g",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 104,
+      "char": "h",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 105,
+      "char": "i",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 106,
+      "char": "j",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 107,
+      "char": "k",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 108,
+      "char": "l",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 109,
+      "char": "m",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 110,
+      "char": "n",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 111,
+      "char": "o",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 112,
+      "char": "p",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 113,
+      "char": "q",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 114,
+      "char": "r",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 115,
+      "char": "s",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 116,
+      "char": "t",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 117,
+      "char": "u",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 118,
+      "char": "v",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 119,
+      "char": "w",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 120,
+      "char": "x",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 121,
+      "char": "y",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 122,
+      "char": "z",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 123,
+      "char": "{",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 124,
+      "char": "|",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 125,
+      "char": "}",
+      "status": 302,
+      "bytesOutPerByteIn": 3
+    },
+    {
+      "byte": 126,
+      "char": "~",
+      "status": 302,
+      "bytesOutPerByteIn": 1
+    },
+    {
+      "byte": 127,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 128,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 129,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 130,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 131,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 132,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 133,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 134,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 135,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 136,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 137,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 138,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 139,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 140,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 141,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 142,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 143,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 144,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 145,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 146,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 147,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 148,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 149,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 150,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 151,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 152,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 153,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 154,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 155,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 156,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 157,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 158,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 159,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 160,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 161,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 162,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 163,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 164,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 165,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 166,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 167,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 168,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 169,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 170,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 171,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 172,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 173,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 174,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 175,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 176,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 177,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 178,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 179,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 180,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 181,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 182,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 183,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 184,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 185,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 186,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 187,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 188,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 189,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 190,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 191,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 192,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 193,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 194,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 195,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 196,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 197,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 198,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 199,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 200,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 201,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 202,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 203,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 204,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 205,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 206,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 207,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 208,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 209,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 210,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 211,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 212,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 213,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 214,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 215,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 216,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 217,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 218,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 219,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 220,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 221,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 222,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 223,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 224,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 225,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 226,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 227,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 228,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 229,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 230,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 231,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 232,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 233,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 234,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 235,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 236,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 237,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 238,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 239,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 240,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 241,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 242,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 243,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 244,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 245,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 246,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 247,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 248,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 249,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 250,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 251,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 252,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 253,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 254,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    },
+    {
+      "byte": 255,
+      "char": null,
+      "status": 400,
+      "bytesOutPerByteIn": null
+    }
+  ]
+}
