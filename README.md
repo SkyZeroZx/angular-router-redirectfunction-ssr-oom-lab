@@ -70,7 +70,7 @@ With `c` bytes per reference and `e` bytes out per fill byte, a request of `B` b
 
 ### One request
 
-Fresh worker per case, default heap, median of 3 runs ([`evidence/ablation-8000.json`](evidence/ablation-8000.json), [`evidence/ablation-16000.json`](evidence/ablation-16000.json)). "Fixed" is the same build with the proposed fix: when `redirectTo` is a function, `posParams` is passed as `null`, so its string keeps `:name` segments and query values as written ([`scripts/ablation.mjs`](scripts/ablation.mjs)).
+Fresh worker per case, default heap, median of 3 runs ([`evidence/ablation-8000.json`](evidence/ablation-8000.json), [`evidence/ablation-16000.json`](evidence/ablation-16000.json)). "Fixed" is the same build with `posParams` passed as `null` when `redirectTo` is a function, so its string keeps `:name` segments and query values as written ([`scripts/ablation.mjs`](scripts/ablation.mjs)).
 
 | Request            | References | Stock `Location` |   Stock time | Fixed `Location` | Fixed time |
 | ------------------ | ---------: | ---------------: | -----------: | ---------------: | ---------: |
@@ -105,6 +105,48 @@ Direct workers exited with code 134 and `JavaScript heap out of memory`. The con
 One request is not enough. At 256 MiB a single 16,000 B request returns its 32 MB `Location` in about 3.7 s and the worker survives. Behind Nginx the same request gets a 502, because Nginx will not relay a 32 MB header through its 32 KiB upstream buffer, but Angular has already built it and the worker reports about 141 MB of heap in use right after.
 
 Holding connections open without reading the reply does not reach the limit either: 12 at 256 MiB and 14 at 512 MiB, all served, with no OOM. The finished header is collected while the connection stays open, so what exhausts the heap is concurrent serialization.
+
+## The three proposed remedies
+
+The guide's snippet can take one of three remedies: keep `:location` as a placeholder, encode the interpolated values with `encodeURIComponent`, or return a `UrlTree`. [`app.routes.ts`](src/app/app.routes.ts) has one case for each, plus `case-rawquery`, which applies none, and [`scripts/cases.mjs`](scripts/cases.mjs) measures them under two requests: the report's, with the references in the `location` segment, and one with the references as plain query parameters. The guide's snippet ignores the query; the other four cases forward it, since a redirect drops the request's query, whether it returns a string or a `UrlTree`.
+
+| Case                | Remedy                             |     Path request |    Query request |
+| ------------------- | ---------------------------------- | ---------------: | ---------------: |
+| `case-doc`          | none, the guide verbatim           | **32,112,927 B** |  ignores a query |
+| `case-rawquery`     | none, no encoder at all            | **32,040,762 B** | **32,092,990 B** |
+| `case-keeplocation` | `:location` placeholder            |         34,630 B | **32,077,078 B** |
+| `case-encode`       | `encodeURIComponent` on all values |         34,632 B | **32,101,028 B** |
+| `case-urltree`      | `Router#createUrlTree`             |         34,630 B |         31,976 B |
+
+`Location` at 16,000 B, each against an equal-size control ([`evidence/cases-4000-8000-16000.json`](evidence/cases-4000-8000-16000.json)). Both string remedies close the report's request but not the query one, where `case-encode` stays within 0.025% of `case-rawquery` and also reaches the V8 OOM with 3 concurrent requests at 256 MiB ([`case-encode`](evidence/threshold-256-16000-case-encode.json), [`case-rawquery`](evidence/threshold-256-16000-case-rawquery.json)).
+
+### Why encoding doesn't help
+
+The query request needs no percent-encoding of its own:
+
+```text
+/case-encode/restaurant/d/menu?z=<fill>&a=:z&b=:z&c=:z…
+```
+
+A bare `:` is legal in a query value, so `a` arrives as `:z`. `encodeURIComponent` writes it as `%3Az`, and parsing the returned string decodes it back before `createQueryParams()` tests `v[0] === ':'`. Segments are read the same way, so an encoded value that starts with `:` still breaks the redirect: `/case-encode/restaurant/%3Adowntown/menu` throws `NG04001: Cannot redirect to '/case-encode/restaurant/%3Adowntown/menu/breakfast?'. Cannot find ':downtown'.` Every other encoded delimiter stays data: a `%2F`, `%3F` or `%26` in the returned string is never read as `/`, `?` or `&`.
+
+Only `case-urltree` holds under both requests, because a returned `UrlTree` skips the substitution. It uses `Router#createUrlTree`, since there is no exported `createUrlTree` function and `createUrlTreeFromSnapshot` throws on the snapshot a redirect function receives. The placeholder remedy can't cover `meal` either: only path parameters can be placeholders, so `:meal` throws `NG04001`.
+
+### With the router fix
+
+With [`router-fix.mjs`](scripts/router-fix.mjs), each `:name` in a function's string is substituted at most once, and nothing amplifies under either request ([`evidence/cases-4000-8000-16000-routerfix.json`](evidence/cases-4000-8000-16000-routerfix.json)):
+
+| Case                | Path request | Query request |
+| ------------------- | -----------: | ------------: |
+| `case-doc`          |     31,987 B |             - |
+| `case-rawquery`     |     31,967 B |      55,918 B |
+| `case-keeplocation` |     34,630 B |      55,928 B |
+| `case-encode`       |     34,632 B |      55,928 B |
+| `case-urltree`      |     34,630 B |      31,976 B |
+
+The query cells hold the forwarded `z` and the one substitution the fix allows, each written three times larger, plus the references left as literals.
+
+Repeated placeholders are intended, so this build and the `posParams: null` ablation are earlier experiments. The current proposal only reads placeholders from a literal `:`, so `%3A` stays data: [SkyZeroZx/angular@9146aecd06](https://github.com/SkyZeroZx/angular/commit/9146aecd06). With the Router alone, outside SSR, it gives `case-encode` its control size, 31,978 B, and leaves `case-rawquery` at 32,092,990 B, since a raw `:` is still a placeholder.
 
 ## See it by hand
 
@@ -165,6 +207,16 @@ docker compose down
 
 `validate-proxy.mjs` reads the same variable. With `on` it expects the attack to be served: every candidate returns 302, the worker stays up, and the `Location` stays under 4x the request.
 
+`cases.mjs` reads it too, but needs the fixed build first:
+
+```powershell
+node scripts/router-fix.mjs
+Remove-Item -Recurse -Force .angular/cache
+npm.cmd run build -- --output-path dist/angular-router-redirectfunction-ssr-oom-lab-routerfix
+npm.cmd ci                                   # put @angular/router back
+$env:ROUTER_FIX = "on"; node scripts/cases.mjs
+```
+
 | Build | Request  | Concurrent | Result                                        |
 | ----- | -------- | ---------: | --------------------------------------------- |
 | off   | 16,000 B |          3 | V8 OOM, exit 139                              |
@@ -185,10 +237,13 @@ node scripts/ablation.mjs 8000                  # one request: stock vs fixed, c
 node scripts/ablation.mjs 16000
 node scripts/fuzz-fix.mjs 20000 1               # stock vs fixed Router, random configs and URLs
 node scripts/fuzz-fix.mjs 20000 2
+node scripts/cases.mjs                          # the guide's snippet vs the three proposed remedies
 node scripts/threshold.mjs 256 8000             # fewest concurrent requests that reach a V8 OOM
 node scripts/threshold.mjs 256 16000
 node scripts/threshold.mjs 512 8000
 node scripts/threshold.mjs 512 16000
+node scripts/threshold.mjs 256 16000 8 case-encode     # the same, for two of the remedy cases
+node scripts/threshold.mjs 256 16000 8 case-rawquery
 node scripts/validate.mjs 256 8000 12           # fixed concurrency, with a /health probe
 node scripts/validate.mjs 256 16000 3
 node scripts/validate.mjs 512 8000 22

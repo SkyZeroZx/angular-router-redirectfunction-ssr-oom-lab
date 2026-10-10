@@ -13,18 +13,26 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import net from 'node:net';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { payload } from './payload.mjs';
+import { payload, queryPayload } from './payload.mjs';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const heapMiB = Number(process.argv[2] ?? 256);
 const targetBytes = Number(process.argv[3] ?? 16000);
 const maxConcurrency = Number(process.argv[4] ?? 24);
+// Which route group to aim at. `case-doc` is the guide's own snippet and the original
+// report's request; the others are the suggestion cases, which need the query generator.
+// See scripts/cases.mjs for what each one is.
+const caseName = process.argv[5] ?? 'case-doc';
 assert([128, 256, 512].includes(heapMiB), 'heap must be 128, 256 or 512 MiB');
 assert(targetBytes >= 1000 && targetBytes <= 16000, 'request target must be 1000..16000 bytes');
+assert(/^case-[a-z]+$/.test(caseName), 'case must look like case-<name>');
 const server = join(root, 'dist', 'angular-router-redirectfunction-ssr-oom-lab', 'server', 'server.mjs');
 
-const candidate = payload(targetBytes, false);
-const control = payload(targetBytes, true);
+const build = (control) => caseName === 'case-doc'
+  ? payload(targetBytes, control)
+  : queryPayload(targetBytes, control, caseName);
+const candidate = build(false);
+const control = build(true);
 assert.equal(Buffer.byteLength(candidate.path), Buffer.byteLength(control.path));
 
 async function freePort() {
@@ -154,13 +162,14 @@ async function trial(controlMode, concurrency) {
 
 const result = {
   platform: process.platform, node: process.version, angular: '22.2.2',
-  heapMiB, targetBytes,
+  heapMiB, targetBytes, caseName,
   requestBytes: Buffer.byteLength(candidate.path),
   refs: candidate.refs, fillBytes: candidate.fillBytes,
   steps: [], minOomConcurrency: null, controlAtThreshold: null,
 };
 mkdirSync(join(root, 'evidence'), { recursive: true });
-const file = join(root, 'evidence', `threshold-${heapMiB}-${targetBytes}.json`);
+const suffix = caseName === 'case-doc' ? '' : `-${caseName}`;
+const file = join(root, 'evidence', `threshold-${heapMiB}-${targetBytes}${suffix}.json`);
 const save = () => writeFileSync(file, JSON.stringify(result, null, 2) + '\n');
 
 for (let n = 1; n <= maxConcurrency; n++) {
@@ -178,5 +187,5 @@ console.log(`control n=${c.concurrency}: oom=${c.v8Oom} 302=${c.ok302}/${c.concu
 assert.equal(c.v8Oom, false, 'equal-size control also OOMed');
 assert.equal(c.ok302, c.concurrency, 'equal-size control did not answer every request');
 assert.equal(c.redirectCalls, c.concurrency, 'control made more than one redirect call per request');
-console.log(`PASS ${heapMiB} MiB / ${targetBytes} B: V8 OOM at ${result.minOomConcurrency} concurrent request(s); control survives ${c.concurrency}`);
+console.log(`PASS ${caseName} ${heapMiB} MiB / ${targetBytes} B: V8 OOM at ${result.minOomConcurrency} concurrent request(s); control survives ${c.concurrency}`);
 console.log(file);

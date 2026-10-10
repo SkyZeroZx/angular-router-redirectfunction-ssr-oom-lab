@@ -1,0 +1,1022 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "routerFix": "on",
+  "sizes": [
+    4000,
+    8000,
+    16000
+  ],
+  "requests": {
+    "path": {
+      "label": "references in the `location` path segment",
+      "cases": {
+        "case-doc": {
+          "suggestion": "none, the guide verbatim",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 341,
+              "fillBytes": 1981,
+              "candidate": {
+                "status": 302,
+                "ms": 17,
+                "locationBytes": 7959,
+                "locationHead": "/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-doc": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 31
+                },
+                "heapUsedBytes": 22501296
+              },
+              "control": {
+                "status": 302,
+                "ms": 25,
+                "locationBytes": 2018,
+                "locationHead": "/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&",
+                "redirectCallsByCase": {
+                  "case-doc": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 31
+                },
+                "heapUsedBytes": 22344016
+              },
+              "ratio": 1.99,
+              "outPerSquare": 0.0005
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 675,
+              "fillBytes": 3977,
+              "candidate": {
+                "status": 302,
+                "ms": 27,
+                "locationBytes": 15961,
+                "locationHead": "/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-doc": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 31
+                },
+                "heapUsedBytes": 21091920
+              },
+              "control": {
+                "status": 302,
+                "ms": 26,
+                "locationBytes": 4032,
+                "locationHead": "/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&",
+                "redirectCallsByCase": {
+                  "case-doc": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 31
+                },
+                "heapUsedBytes": 20658352
+              },
+              "ratio": 2,
+              "outPerSquare": 0.0002
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1341,
+              "fillBytes": 7981,
+              "candidate": {
+                "status": 302,
+                "ms": 49,
+                "locationBytes": 31987,
+                "locationHead": "/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-doc": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 31
+                },
+                "heapUsedBytes": 25584320
+              },
+              "control": {
+                "status": 302,
+                "ms": 44,
+                "locationBytes": 8046,
+                "locationHead": "/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&",
+                "redirectCallsByCase": {
+                  "case-doc": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 31
+                },
+                "heapUsedBytes": 24835968
+              },
+              "ratio": 2,
+              "outPerSquare": 0.0001
+            }
+          }
+        },
+        "case-rawquery": {
+          "suggestion": "none, no encoder at all",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 340,
+              "fillBytes": 1969,
+              "candidate": {
+                "status": 302,
+                "ms": 18,
+                "locationBytes": 7939,
+                "locationHead": "/case-rawquery/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 22875488
+              },
+              "control": {
+                "status": 302,
+                "ms": 18,
+                "locationBytes": 2034,
+                "locationHead": "/case-rawquery/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 22764424
+              },
+              "ratio": 1.98,
+              "outPerSquare": 0.0005
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 673,
+              "fillBytes": 3971,
+              "candidate": {
+                "status": 302,
+                "ms": 27,
+                "locationBytes": 15953,
+                "locationHead": "/case-rawquery/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 21355408
+              },
+              "control": {
+                "status": 302,
+                "ms": 27,
+                "locationBytes": 4042,
+                "locationHead": "/case-rawquery/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 21069176
+              },
+              "ratio": 1.99,
+              "outPerSquare": 0.0002
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1340,
+              "fillBytes": 7969,
+              "candidate": {
+                "status": 302,
+                "ms": 46,
+                "locationBytes": 31967,
+                "locationHead": "/case-rawquery/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 25707712
+              },
+              "control": {
+                "status": 302,
+                "ms": 43,
+                "locationBytes": 8062,
+                "locationHead": "/case-rawquery/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 24965472
+              },
+              "ratio": 2,
+              "outPerSquare": 0.0001
+            }
+          }
+        },
+        "case-keeplocation": {
+          "suggestion": "`:location` placeholder",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 339,
+              "fillBytes": 1971,
+              "candidate": {
+                "status": 302,
+                "ms": 10,
+                "locationBytes": 8630,
+                "locationHead": "/case-keeplocation/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 18622504
+              },
+              "control": {
+                "status": 302,
+                "ms": 12,
+                "locationBytes": 8630,
+                "locationHead": "/case-keeplocation/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 18466104
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0005
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 673,
+              "fillBytes": 3967,
+              "candidate": {
+                "status": 302,
+                "ms": 11,
+                "locationBytes": 17290,
+                "locationHead": "/case-keeplocation/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 20416736
+              },
+              "control": {
+                "status": 302,
+                "ms": 14,
+                "locationBytes": 17290,
+                "locationHead": "/case-keeplocation/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 20373824
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0003
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1339,
+              "fillBytes": 7971,
+              "candidate": {
+                "status": 302,
+                "ms": 15,
+                "locationBytes": 34630,
+                "locationHead": "/case-keeplocation/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 17818528
+              },
+              "control": {
+                "status": 302,
+                "ms": 14,
+                "locationBytes": 34630,
+                "locationHead": "/case-keeplocation/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 17782872
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0001
+            }
+          }
+        },
+        "case-encode": {
+          "suggestion": "`encodeURIComponent` all values",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 340,
+              "fillBytes": 1971,
+              "candidate": {
+                "status": 302,
+                "ms": 9,
+                "locationBytes": 8632,
+                "locationHead": "/case-encode/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D:z&2%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 18627984
+              },
+              "control": {
+                "status": 302,
+                "ms": 10,
+                "locationBytes": 8632,
+                "locationHead": "/case-encode/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D@z&2%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 18485696
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0005
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 673,
+              "fillBytes": 3973,
+              "candidate": {
+                "status": 302,
+                "ms": 11,
+                "locationBytes": 17302,
+                "locationHead": "/case-encode/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D:z&2%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 20669176
+              },
+              "control": {
+                "status": 302,
+                "ms": 19,
+                "locationBytes": 17302,
+                "locationHead": "/case-encode/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D@z&2%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 20494544
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0003
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1340,
+              "fillBytes": 7971,
+              "candidate": {
+                "status": 302,
+                "ms": 15,
+                "locationBytes": 34632,
+                "locationHead": "/case-encode/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D:z&2%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 17824640
+              },
+              "control": {
+                "status": 302,
+                "ms": 15,
+                "locationBytes": 34632,
+                "locationHead": "/case-encode/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D@z&2%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 17800432
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0001
+            }
+          }
+        },
+        "case-urltree": {
+          "suggestion": "`Router#createUrlTree`",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 340,
+              "fillBytes": 1970,
+              "candidate": {
+                "status": 302,
+                "ms": 12,
+                "locationBytes": 8630,
+                "locationHead": "/case-urltree/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D:z&2%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 18494816
+              },
+              "control": {
+                "status": 302,
+                "ms": 11,
+                "locationBytes": 8630,
+                "locationHead": "/case-urltree/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D@z&2%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 18605536
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0005
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 673,
+              "fillBytes": 3972,
+              "candidate": {
+                "status": 302,
+                "ms": 25,
+                "locationBytes": 17300,
+                "locationHead": "/case-urltree/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D:z&2%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 20571968
+              },
+              "control": {
+                "status": 302,
+                "ms": 13,
+                "locationBytes": 17300,
+                "locationHead": "/case-urltree/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D@z&2%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 20334656
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0003
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1340,
+              "fillBytes": 7970,
+              "candidate": {
+                "status": 302,
+                "ms": 16,
+                "locationBytes": 34630,
+                "locationHead": "/case-urltree/restaurant/a%2Fmenu%2Flunch%3F0%3D:z&1%3D:z&2%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 17830992
+              },
+              "control": {
+                "status": 302,
+                "ms": 15,
+                "locationBytes": 34630,
+                "locationHead": "/case-urltree/restaurant/a%2Fmenu%2Flunch%3F0%3D@z&1%3D@z&2%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 17836136
+              },
+              "ratio": 2.16,
+              "outPerSquare": 0.0001
+            }
+          }
+        }
+      }
+    },
+    "query": {
+      "label": "references as query parameters",
+      "cases": {
+        "case-rawquery": {
+          "suggestion": "none, no encoder at all",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 339,
+              "fillBytes": 1982,
+              "candidate": {
+                "status": 302,
+                "ms": 22,
+                "locationBytes": 13918,
+                "locationHead": "/case-rawquery/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 17792984
+              },
+              "control": {
+                "status": 302,
+                "ms": 22,
+                "locationBytes": 7974,
+                "locationHead": "/case-rawquery/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 17787784
+              },
+              "ratio": 3.48,
+              "outPerSquare": 0.0009
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 672,
+              "fillBytes": 3984,
+              "candidate": {
+                "status": 302,
+                "ms": 37,
+                "locationBytes": 27928,
+                "locationHead": "/case-rawquery/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 18721896
+              },
+              "control": {
+                "status": 302,
+                "ms": 35,
+                "locationBytes": 15978,
+                "locationHead": "/case-rawquery/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 18381320
+              },
+              "ratio": 3.49,
+              "outPerSquare": 0.0004
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1339,
+              "fillBytes": 7982,
+              "candidate": {
+                "status": 302,
+                "ms": 64,
+                "locationBytes": 55918,
+                "locationHead": "/case-rawquery/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 19656416
+              },
+              "control": {
+                "status": 302,
+                "ms": 60,
+                "locationBytes": 31974,
+                "locationHead": "/case-rawquery/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D",
+                "redirectCallsByCase": {
+                  "case-rawquery": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 60
+                },
+                "heapUsedBytes": 26605032
+              },
+              "ratio": 3.49,
+              "outPerSquare": 0.0002
+            }
+          }
+        },
+        "case-keeplocation": {
+          "suggestion": "`:location` placeholder",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 338,
+              "fillBytes": 1984,
+              "candidate": {
+                "status": 302,
+                "ms": 21,
+                "locationBytes": 13928,
+                "locationHead": "/case-keeplocation/restaurant/d/menu/breakfast?z=%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 17860360
+              },
+              "control": {
+                "status": 302,
+                "ms": 21,
+                "locationBytes": 7978,
+                "locationHead": "/case-keeplocation/restaurant/d/menu/breakfast?z=%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 17808152
+              },
+              "ratio": 3.48,
+              "outPerSquare": 0.0009
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 672,
+              "fillBytes": 3980,
+              "candidate": {
+                "status": 302,
+                "ms": 36,
+                "locationBytes": 27908,
+                "locationHead": "/case-keeplocation/restaurant/d/menu/breakfast?z=%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 18812864
+              },
+              "control": {
+                "status": 302,
+                "ms": 36,
+                "locationBytes": 15970,
+                "locationHead": "/case-keeplocation/restaurant/d/menu/breakfast?z=%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 18441816
+              },
+              "ratio": 3.49,
+              "outPerSquare": 0.0004
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1338,
+              "fillBytes": 7984,
+              "candidate": {
+                "status": 302,
+                "ms": 63,
+                "locationBytes": 55928,
+                "locationHead": "/case-keeplocation/restaurant/d/menu/breakfast?z=%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 19518992
+              },
+              "control": {
+                "status": 302,
+                "ms": 60,
+                "locationBytes": 31978,
+                "locationHead": "/case-keeplocation/restaurant/d/menu/breakfast?z=%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-keeplocation": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 64
+                },
+                "heapUsedBytes": 18597696
+              },
+              "ratio": 3.5,
+              "outPerSquare": 0.0002
+            }
+          }
+        },
+        "case-encode": {
+          "suggestion": "`encodeURIComponent` all values",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 339,
+              "fillBytes": 1984,
+              "candidate": {
+                "status": 302,
+                "ms": 22,
+                "locationBytes": 13928,
+                "locationHead": "/case-encode/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 17840216
+              },
+              "control": {
+                "status": 302,
+                "ms": 21,
+                "locationBytes": 7978,
+                "locationHead": "/case-encode/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 17773624
+              },
+              "ratio": 3.48,
+              "outPerSquare": 0.0009
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 672,
+              "fillBytes": 3986,
+              "candidate": {
+                "status": 302,
+                "ms": 36,
+                "locationBytes": 27938,
+                "locationHead": "/case-encode/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 18813888
+              },
+              "control": {
+                "status": 302,
+                "ms": 36,
+                "locationBytes": 15982,
+                "locationHead": "/case-encode/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 18474664
+              },
+              "ratio": 3.49,
+              "outPerSquare": 0.0004
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1339,
+              "fillBytes": 7984,
+              "candidate": {
+                "status": 302,
+                "ms": 65,
+                "locationBytes": 55928,
+                "locationHead": "/case-encode/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 19898976
+              },
+              "control": {
+                "status": 302,
+                "ms": 63,
+                "locationBytes": 31978,
+                "locationHead": "/case-encode/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%3",
+                "redirectCallsByCase": {
+                  "case-encode": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 58
+                },
+                "heapUsedBytes": 18987320
+              },
+              "ratio": 3.5,
+              "outPerSquare": 0.0002
+            }
+          }
+        },
+        "case-urltree": {
+          "suggestion": "`Router#createUrlTree`",
+          "amplifies": false,
+          "sizes": {
+            "4000": {
+              "requestBytes": 4000,
+              "references": 339,
+              "fillBytes": 1983,
+              "candidate": {
+                "status": 302,
+                "ms": 25,
+                "locationBytes": 7976,
+                "locationHead": "/case-urltree/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 18590600
+              },
+              "control": {
+                "status": 302,
+                "ms": 24,
+                "locationBytes": 7976,
+                "locationHead": "/case-urltree/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 18600520
+              },
+              "ratio": 1.99,
+              "outPerSquare": 0.0005
+            },
+            "8000": {
+              "requestBytes": 8000,
+              "references": 672,
+              "fillBytes": 3985,
+              "candidate": {
+                "status": 302,
+                "ms": 39,
+                "locationBytes": 15980,
+                "locationHead": "/case-urltree/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 20110768
+              },
+              "control": {
+                "status": 302,
+                "ms": 39,
+                "locationBytes": 15980,
+                "locationHead": "/case-urltree/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 20053128
+              },
+              "ratio": 2,
+              "outPerSquare": 0.0002
+            },
+            "16000": {
+              "requestBytes": 16000,
+              "references": 1339,
+              "fillBytes": 7983,
+              "candidate": {
+                "status": 302,
+                "ms": 63,
+                "locationBytes": 31976,
+                "locationHead": "/case-urltree/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 21994056
+              },
+              "control": {
+                "status": 302,
+                "ms": 64,
+                "locationBytes": 31976,
+                "locationHead": "/case-urltree/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D%3D%",
+                "redirectCallsByCase": {
+                  "case-urltree": 2
+                },
+                "warmBenign": {
+                  "status": 302,
+                  "locationBytes": 59
+                },
+                "heapUsedBytes": 22253936
+              },
+              "ratio": 2,
+              "outPerSquare": 0.0001
+            }
+          }
+        }
+      }
+    }
+  }
+}

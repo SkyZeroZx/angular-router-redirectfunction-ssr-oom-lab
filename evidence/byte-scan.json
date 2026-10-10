@@ -3,7 +3,7 @@
   "node": "v24.16.0",
   "angular": "22.2.2",
   "repeat": 60,
-  "baselineLocationBytes": 29,
+  "baselineLocationBytes": 40,
   "maxBytesOutPerByteIn": 3,
   "bestBytes": [
     "\"",

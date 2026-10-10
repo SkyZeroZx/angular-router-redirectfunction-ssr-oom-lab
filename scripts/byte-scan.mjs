@@ -2,7 +2,7 @@
 //
 //   node scripts/byte-scan.mjs
 //
-// Sends `/restaurant/x%3F0=:z&/menu?z=<byte x N>&meal=x` once per byte value over a raw
+// Sends `/restaurant/a%2Fmenu%2Flunch%3F0=:z&/menu?z=<byte x N>&meal=x` once per byte value over a raw
 // socket, so bytes that `http.request` would refuse still reach the server, and divides
 // the growth of the `Location` header by N. Establishes two bounds the generator relies
 // on: three output bytes per request byte is the ceiling, and no byte outside printable
@@ -21,7 +21,9 @@ const REPEAT = 60;
 // space ends it, `#` starts a fragment, `%` opens an escape, `&` ends the query value.
 const STRUCTURAL = new Set([0x20, 0x23, 0x25, 0x26]);
 
-const prefix = '/restaurant/x%3F0=:z&/menu?z=';
+// The same head payload() uses: it lands the redirect on a destination route, so this
+// does not depend on the commented-out `**` catch-all.
+const prefix = '/restaurant/a%2Fmenu%2Flunch%3F0=:z&/menu?z=';
 const suffix = '&meal=x';
 
 function target(byte, repeat) {
