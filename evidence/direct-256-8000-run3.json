@@ -1,0 +1,190 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 256,
+  "targetBytes": 8000,
+  "concurrency": 12,
+  "benign": {
+    "control": true,
+    "concurrency": 12,
+    "requestBytes": 8000,
+    "markers": 676,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 131,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 326,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 328,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 330,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 333,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 335,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 337,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 340,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 342,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 344,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 346,
+        "locationBytes": 4027
+      },
+      {
+        "status": 302,
+        "ms": 348,
+        "locationBytes": 4027
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 281,
+      "locationBytes": 0
+    },
+    "stats": {
+      "ssrRequests": 12,
+      "redirectCalls": 12,
+      "heapUsedBytes": 24882200
+    },
+    "exit": null,
+    "v8Oom": false,
+    "stderrTail": ""
+  },
+  "single": {
+    "control": false,
+    "concurrency": 1,
+    "requestBytes": 8000,
+    "markers": 676,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 753,
+        "locationBytes": 8086283
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 718,
+      "locationBytes": 0
+    },
+    "stats": {
+      "ssrRequests": 1,
+      "redirectCalls": 1,
+      "heapUsedBytes": 39742984
+    },
+    "exit": null,
+    "v8Oom": false,
+    "stderrTail": ""
+  },
+  "attack": {
+    "control": false,
+    "concurrency": 12,
+    "requestBytes": 8000,
+    "markers": 676,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 763,
+        "locationBytes": 8086283
+      },
+      {
+        "status": 302,
+        "ms": 5690,
+        "locationBytes": 8086283
+      },
+      {
+        "status": 302,
+        "ms": 5827,
+        "locationBytes": 8086283
+      },
+      {
+        "status": 302,
+        "ms": 5968,
+        "locationBytes": 8086283
+      },
+      {
+        "status": 302,
+        "ms": 6108,
+        "locationBytes": 8086283
+      },
+      {
+        "status": 302,
+        "ms": 6241,
+        "locationBytes": 8086283
+      },
+      {
+        "status": 302,
+        "ms": 6380,
+        "locationBytes": 8086283
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 6486
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 6486
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 6486
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 6486
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 6486
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 5383,
+      "locationBytes": 0
+    },
+    "stats": null,
+    "exit": {
+      "code": 134,
+      "signal": null
+    },
+    "v8Oom": true,
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[15880:0000023170968000]     6526 ms: Mark-Compact (reduce) 255.2 (259.0) -> 255.1 (257.5) MB, pooled: 0 MB, 2.98 / 0.00 ms  (+ 0.0 ms in 10 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 7 ms) (average mu = 0.819, curr\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE2518C9 v8::Unlocker::~Unlocker+9273\r\n 6: 00007FF6FDDC5EE2 v8::String::Value::~Value+142450\r\n 7: 00007FF6FF51F8FA v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422666\r\n 8: 00007FF6FF50A956 v8::base::UnsignedDivisionByConstant<unsigned __int64>+1336742\r\n 9: 000002311021F478 \r\n"
+  }
+}

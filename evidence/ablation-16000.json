@@ -1,0 +1,85 @@
+{
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "generator": "current",
+  "requestBytes": 16000,
+  "refs": 1343,
+  "fillBytes": 7984,
+  "runs": 3,
+  "stock": {
+    "normal": {
+      "status": 302,
+      "ms": 19,
+      "locationBytes": 31,
+      "locationHead": "/restaurant/downtown/menu/lunch",
+      "redirectCalls": 1,
+      "msRuns": [
+        16,
+        19,
+        20
+      ]
+    },
+    "candidate": {
+      "status": 302,
+      "ms": 4317,
+      "locationBytes": 32172897,
+      "locationHead": "/restaurant/x?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3",
+      "redirectCalls": 1,
+      "msRuns": [
+        4095,
+        4317,
+        4822
+      ]
+    },
+    "control": {
+      "status": 302,
+      "ms": 46,
+      "locationBytes": 8047,
+      "locationHead": "/restaurant/x?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&7=@z&8=@z&9",
+      "redirectCalls": 1,
+      "msRuns": [
+        46,
+        46,
+        46
+      ]
+    }
+  },
+  "fixed": {
+    "normal": {
+      "status": 302,
+      "ms": 23,
+      "locationBytes": 31,
+      "locationHead": "/restaurant/downtown/menu/lunch",
+      "redirectCalls": 1,
+      "msRuns": [
+        23,
+        25,
+        7
+      ]
+    },
+    "candidate": {
+      "status": 302,
+      "ms": 47,
+      "locationBytes": 8047,
+      "locationHead": "/restaurant/x?0=:z&1=:z&2=:z&3=:z&4=:z&5=:z&6=:z&7=:z&8=:z&9",
+      "redirectCalls": 1,
+      "msRuns": [
+        46,
+        48,
+        47
+      ]
+    },
+    "control": {
+      "status": 302,
+      "ms": 46,
+      "locationBytes": 8047,
+      "locationHead": "/restaurant/x?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&7=@z&8=@z&9",
+      "redirectCalls": 1,
+      "msRuns": [
+        45,
+        46,
+        46
+      ]
+    }
+  }
+}

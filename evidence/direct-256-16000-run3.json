@@ -4,73 +4,38 @@
   "angular": "22.2.2",
   "heapMiB": 256,
   "targetBytes": 16000,
-  "concurrency": 10,
+  "concurrency": 3,
   "benign": {
     "control": true,
-    "concurrency": 10,
-    "requestBytes": 15991,
-    "markers": 945,
+    "concurrency": 3,
+    "requestBytes": 16000,
+    "markers": 1343,
     "responses": [
       {
         "status": 302,
-        "ms": 125,
-        "locationBytes": 10316
+        "ms": 147,
+        "locationBytes": 8047
       },
       {
         "status": 302,
-        "ms": 313,
-        "locationBytes": 10316
+        "ms": 216,
+        "locationBytes": 8047
       },
       {
         "status": 302,
-        "ms": 316,
-        "locationBytes": 10316
-      },
-      {
-        "status": 302,
-        "ms": 318,
-        "locationBytes": 10316
-      },
-      {
-        "status": 302,
-        "ms": 321,
-        "locationBytes": 10316
-      },
-      {
-        "status": 302,
-        "ms": 324,
-        "locationBytes": 10316
-      },
-      {
-        "status": 302,
-        "ms": 327,
-        "locationBytes": 10316
-      },
-      {
-        "status": 302,
-        "ms": 329,
-        "locationBytes": 10316
-      },
-      {
-        "status": 302,
-        "ms": 332,
-        "locationBytes": 10316
-      },
-      {
-        "status": 302,
-        "ms": 335,
-        "locationBytes": 10316
+        "ms": 220,
+        "locationBytes": 8047
       }
     ],
     "health": {
       "status": 200,
-      "ms": 269,
+      "ms": 177,
       "locationBytes": 0
     },
     "stats": {
-      "ssrRequests": 10,
-      "redirectCalls": 10,
-      "heapUsedBytes": 20855448
+      "ssrRequests": 3,
+      "redirectCalls": 3,
+      "heapUsedBytes": 21318912
     },
     "exit": null,
     "v8Oom": false,
@@ -79,24 +44,24 @@
   "single": {
     "control": false,
     "concurrency": 1,
-    "requestBytes": 15991,
-    "markers": 945,
+    "requestBytes": 16000,
+    "markers": 1343,
     "responses": [
       {
         "status": 302,
-        "ms": 1526,
-        "locationBytes": 13301741
+        "ms": 3953,
+        "locationBytes": 32172897
       }
     ],
     "health": {
       "status": 200,
-      "ms": 1493,
+      "ms": 2761,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 55481888
+      "heapUsedBytes": 176469248
     },
     "exit": null,
     "v8Oom": false,
@@ -104,55 +69,26 @@
   },
   "attack": {
     "control": false,
-    "concurrency": 10,
-    "requestBytes": 15991,
-    "markers": 945,
+    "concurrency": 3,
+    "requestBytes": 16000,
+    "markers": 1343,
     "responses": [
       {
-        "status": 302,
-        "ms": 1509,
-        "locationBytes": 13301741
+        "error": "ECONNRESET",
+        "ms": 5573
       },
       {
         "error": "ECONNRESET",
-        "ms": 7817
+        "ms": 5573
       },
       {
         "error": "ECONNRESET",
-        "ms": 7817
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 7817
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 7817
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 7817
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 7817
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 7817
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 7817
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 7817
+        "ms": 5573
       }
     ],
     "health": {
       "error": "ECONNRESET",
-      "ms": 7778
+      "ms": 5534
     },
     "stats": null,
     "exit": {
@@ -160,6 +96,6 @@
       "signal": null
     },
     "v8Oom": true,
-    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[13600:0000013B33970000]     7954 ms: Mark-Compact (reduce) 256.0 (266.1) -> 256.0 (258.1) MB, pooled: 0 MB, 4.77 / 0.00 ms  (+ 0.0 ms in 1 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 26 ms) (average mu = 0.892, curr\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F444 uv_timer_set_repeat+130212\r\n 8: 00007FF6FE20F31C uv_timer_set_repeat+129916\r\n 9: 00007FF6FE1F6419 uv_timer_set_repeat+27769\r\n10: 00007FF6FE1F6582 uv_timer_set_repeat+28130\r\n11: 00007FF6FE3CF492 v8::String::NewFromUtf8+258\r\n12: 00007FF6FD6461B1 v8::CTypeInfoBuilder<unsigned __int64>::Build+285985\r\n13: 00007FF6FF477A7E v8::base::UnsignedDivisionByConstant<unsigned __int64>+734926\r\n14: 0000013B4C28F3E1 \r\n"
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[22024:0000028E0D6F4000]     5606 ms: Mark-Compact (reduce) 253.2 (262.1) -> 253.0 (256.6) MB, pooled: 0 MB, 2.48 / 0.00 ms  (+ 0.0 ms in 8 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 5 ms) (average mu = 0.918, curre[22024:0000028E0D6F4000]     5615 ms: Mark-Compact 254.0 (256.6) -> 254.0 (260.6) MB, pooled: 0 MB, 3.97 / 0.00 ms  (average mu = 0.838, current mu = 0.539) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 0000028E2604A2C9 \r\n"
   }
 }

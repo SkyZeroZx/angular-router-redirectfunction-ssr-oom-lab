@@ -1,0 +1,136 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 512,
+  "targetBytes": 16000,
+  "concurrency": 6,
+  "benign": {
+    "control": true,
+    "concurrency": 6,
+    "requestBytes": 16000,
+    "markers": 1343,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 151,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 306,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 310,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 314,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 319,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 323,
+        "locationBytes": 8047
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 265,
+      "locationBytes": 0
+    },
+    "stats": {
+      "ssrRequests": 6,
+      "redirectCalls": 6,
+      "heapUsedBytes": 22737888
+    },
+    "exit": null,
+    "v8Oom": false,
+    "stderrTail": ""
+  },
+  "single": {
+    "control": false,
+    "concurrency": 1,
+    "requestBytes": 16000,
+    "markers": 1343,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 3992,
+        "locationBytes": 32172897
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 2769,
+      "locationBytes": 0
+    },
+    "stats": {
+      "ssrRequests": 1,
+      "redirectCalls": 1,
+      "heapUsedBytes": 112065768
+    },
+    "exit": null,
+    "v8Oom": false,
+    "stderrTail": ""
+  },
+  "attack": {
+    "control": false,
+    "concurrency": 6,
+    "requestBytes": 16000,
+    "markers": 1343,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 4114,
+        "locationBytes": 32172897
+      },
+      {
+        "status": 302,
+        "ms": 14043,
+        "locationBytes": 32172897
+      },
+      {
+        "status": 302,
+        "ms": 17132,
+        "locationBytes": 32172897
+      },
+      {
+        "status": 302,
+        "ms": 22956,
+        "locationBytes": 32172897
+      },
+      {
+        "status": 302,
+        "ms": 23060,
+        "locationBytes": 32172897
+      },
+      {
+        "status": 302,
+        "ms": 23161,
+        "locationBytes": 32172897
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 11006,
+      "locationBytes": 0
+    },
+    "stats": {
+      "ssrRequests": 6,
+      "redirectCalls": 6,
+      "heapUsedBytes": 13748160
+    },
+    "exit": null,
+    "v8Oom": false,
+    "stderrTail": ""
+  }
+}

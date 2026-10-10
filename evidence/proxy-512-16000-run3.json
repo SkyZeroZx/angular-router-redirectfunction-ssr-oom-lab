@@ -4,116 +4,41 @@
   "angular": "22.2.2",
   "heapMiB": 512,
   "targetBytes": 16000,
-  "concurrency": 20,
-  "requestBytes": 15991,
-  "markers": 945,
+  "concurrency": 5,
+  "requestBytes": 16000,
+  "markers": 1343,
   "control": {
     "responses": [
       {
         "status": 302,
-        "locationBytes": 10316,
-        "ms": 245
+        "locationBytes": 8047,
+        "ms": 318
       },
       {
         "status": 302,
-        "locationBytes": 10316,
-        "ms": 247
+        "locationBytes": 8047,
+        "ms": 321
       },
       {
         "status": 302,
-        "locationBytes": 10316,
-        "ms": 623
+        "locationBytes": 8047,
+        "ms": 325
       },
       {
         "status": 302,
-        "locationBytes": 10316,
-        "ms": 632
+        "locationBytes": 8047,
+        "ms": 331
       },
       {
         "status": 302,
-        "locationBytes": 10316,
-        "ms": 635
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 639
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 642
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 646
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 649
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 653
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 655
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 659
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 661
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 665
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 668
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 671
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 701
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 726
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 750
-      },
-      {
-        "status": 302,
-        "locationBytes": 10316,
-        "ms": 774
+        "locationBytes": 8047,
+        "ms": 374
       }
     ],
     "stats": {
-      "ssrRequests": 20,
-      "redirectCalls": 20,
-      "heapUsedBytes": 24308968
+      "ssrRequests": 5,
+      "redirectCalls": 5,
+      "heapUsedBytes": 19374048
     },
     "state": {
       "Status": "running",
@@ -122,24 +47,18 @@
       "Restarting": false,
       "OOMKilled": false,
       "Dead": false,
-      "Pid": 9632,
+      "Pid": 8757,
       "ExitCode": 0,
       "Error": "",
-      "StartedAt": "2026-10-09T23:18:41.91466915Z",
+      "StartedAt": "2026-10-10T01:20:17.466455976Z",
       "FinishedAt": "0001-01-01T00:00:00Z",
       "Health": {
         "Status": "healthy",
         "FailingStreak": 0,
         "Log": [
           {
-            "Start": "2026-10-09T23:18:44.174534563Z",
-            "End": "2026-10-09T23:18:44.301379887Z",
-            "ExitCode": 0,
-            "Output": ""
-          },
-          {
-            "Start": "2026-10-09T23:18:46.302581942Z",
-            "End": "2026-10-09T23:18:46.443867097Z",
+            "Start": "2026-10-10T01:20:19.605256902Z",
+            "End": "2026-10-10T01:20:19.725801958Z",
             "ExitCode": 0,
             "Output": ""
           }
@@ -152,13 +71,13 @@
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 1511
+        "ms": 2842
       }
     ],
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 68641736
+      "heapUsedBytes": 141684648
     },
     "state": {
       "Status": "running",
@@ -167,24 +86,24 @@
       "Restarting": false,
       "OOMKilled": false,
       "Dead": false,
-      "Pid": 10031,
+      "Pid": 9130,
       "ExitCode": 0,
       "Error": "",
-      "StartedAt": "2026-10-09T23:18:54.051925922Z",
+      "StartedAt": "2026-10-10T01:20:28.996695549Z",
       "FinishedAt": "0001-01-01T00:00:00Z",
       "Health": {
         "Status": "healthy",
         "FailingStreak": 0,
         "Log": [
           {
-            "Start": "2026-10-09T23:18:56.195455932Z",
-            "End": "2026-10-09T23:18:56.320601723Z",
+            "Start": "2026-10-10T01:20:31.128338704Z",
+            "End": "2026-10-10T01:20:31.463857243Z",
             "ExitCode": 0,
             "Output": ""
           },
           {
-            "Start": "2026-10-09T23:18:58.321174378Z",
-            "End": "2026-10-09T23:18:58.908437294Z",
+            "Start": "2026-10-10T01:20:33.465136853Z",
+            "End": "2026-10-10T01:20:35.433775747Z",
             "ExitCode": 0,
             "Output": ""
           }
@@ -197,102 +116,27 @@
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 2496
+        "ms": 7480
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 2698
+        "ms": 7946
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 22115
+        "ms": 8512
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 22115
+        "ms": 15503
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 22115
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22115
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22114
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22114
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22114
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22113
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22113
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22113
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22113
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22113
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22112
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22112
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22112
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22112
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22112
-      },
-      {
-        "status": 502,
-        "locationBytes": 0,
-        "ms": 22112
+        "ms": 15503
       }
     ],
     "state": {
@@ -305,46 +149,46 @@
       "Pid": 0,
       "ExitCode": 139,
       "Error": "",
-      "StartedAt": "2026-10-09T23:19:06.769520402Z",
-      "FinishedAt": "2026-10-09T23:19:32.275438863Z",
+      "StartedAt": "2026-10-10T01:20:43.289990142Z",
+      "FinishedAt": "2026-10-10T01:21:02.061333816Z",
       "Health": {
         "Status": "unhealthy",
-        "FailingStreak": 6,
+        "FailingStreak": 4,
         "Log": [
           {
-            "Start": "2026-10-09T23:19:15.180343444Z",
-            "End": "2026-10-09T23:19:17.213164924Z",
-            "ExitCode": -1,
-            "Output": "Health check exceeded timeout (2s)"
-          },
-          {
-            "Start": "2026-10-09T23:19:19.214429233Z",
-            "End": "2026-10-09T23:19:21.246812329Z",
-            "ExitCode": -1,
-            "Output": "Health check exceeded timeout (2s)"
-          },
-          {
-            "Start": "2026-10-09T23:19:23.247756277Z",
-            "End": "2026-10-09T23:19:25.286606113Z",
-            "ExitCode": -1,
-            "Output": "Health check exceeded timeout (2s)"
-          },
-          {
-            "Start": "2026-10-09T23:19:27.287654353Z",
-            "End": "2026-10-09T23:19:29.322379087Z",
-            "ExitCode": -1,
-            "Output": "Health check exceeded timeout (2s)"
-          },
-          {
-            "Start": "2026-10-09T23:19:31.32344719Z",
-            "End": "2026-10-09T23:19:32.244778115Z",
-            "ExitCode": 137,
+            "Start": "2026-10-10T01:20:45.4143249Z",
+            "End": "2026-10-10T01:20:45.536118684Z",
+            "ExitCode": 0,
             "Output": ""
+          },
+          {
+            "Start": "2026-10-10T01:20:47.537330726Z",
+            "End": "2026-10-10T01:20:49.570108495Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (2s)"
+          },
+          {
+            "Start": "2026-10-10T01:20:51.570931487Z",
+            "End": "2026-10-10T01:20:53.603730227Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (2s)"
+          },
+          {
+            "Start": "2026-10-10T01:20:55.604733097Z",
+            "End": "2026-10-10T01:20:57.638131093Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (2s)"
+          },
+          {
+            "Start": "2026-10-10T01:20:59.638470249Z",
+            "End": "2026-10-10T01:21:01.90257881Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (2s)"
           }
         ]
       }
     },
     "stats": null,
-    "appLogTail": "app-1  | \napp-1  | <--- Last few GCs --->\napp-1  | \napp-1  | [1:0x7d849799e000]    22603 ms: Scavenge 503.8 (509.7) -> 500.7 (518.0) MB, pooled: 0 MB, 0.59 / 0.00 ms  (average mu = 0.882, current mu = 0.893) allocation failure; \napp-1  | [1:0x7d849799e000]    22616 ms: Mark-Compact (reduce) 514.2 (530.7) -> 513.0 (516.2) MB, pooled: 0 MB, 6.03 / 0.00 ms  (+ 0.4 ms in 14 steps since start of marking, biggest step 0.2 ms, walltime since start of marking 12 ms) (average mu = 0.863, current m\napp-1  | FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\napp-1  | ----- Native stack trace -----\napp-1  | \n"
+    "appLogTail": "app-1  | \napp-1  | <--- Last few GCs --->\napp-1  | \napp-1  | [1:0x750169bde000]    15541 ms: Scavenge 504.6 (510.0) -> 504.5 (515.0) MB, pooled: 0 MB, 0.80 / 0.00 ms  (average mu = 0.941, current mu = 0.941) allocation failure; \napp-1  | [1:0x750169bde000]    15562 ms: Mark-Compact (reduce) 535.8 (545.7) -> 535.6 (540.0) MB, pooled: 0 MB, 5.62 / 0.00 ms  (+ 0.3 ms in 10 steps since start of marking, biggest step 0.2 ms, walltime since start of marking 21 ms) (average mu = 0.907, current m\napp-1  | FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\napp-1  | ----- Native stack trace -----\napp-1  | \n"
   }
 }

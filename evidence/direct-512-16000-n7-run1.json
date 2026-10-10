@@ -1,0 +1,139 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 512,
+  "targetBytes": 16000,
+  "concurrency": 7,
+  "benign": {
+    "control": true,
+    "concurrency": 7,
+    "requestBytes": 16000,
+    "markers": 1343,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 137,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 326,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 330,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 334,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 339,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 343,
+        "locationBytes": 8047
+      },
+      {
+        "status": 302,
+        "ms": 346,
+        "locationBytes": 8047
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 286,
+      "locationBytes": 0
+    },
+    "stats": {
+      "ssrRequests": 7,
+      "redirectCalls": 7,
+      "heapUsedBytes": 25275496
+    },
+    "exit": null,
+    "v8Oom": false,
+    "stderrTail": ""
+  },
+  "single": {
+    "control": false,
+    "concurrency": 1,
+    "requestBytes": 16000,
+    "markers": 1343,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 4088,
+        "locationBytes": 32172897
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 2855,
+      "locationBytes": 0
+    },
+    "stats": {
+      "ssrRequests": 1,
+      "redirectCalls": 1,
+      "heapUsedBytes": 112062536
+    },
+    "exit": null,
+    "v8Oom": false,
+    "stderrTail": ""
+  },
+  "attack": {
+    "control": false,
+    "concurrency": 7,
+    "requestBytes": 16000,
+    "markers": 1343,
+    "responses": [
+      {
+        "status": 302,
+        "ms": 4295,
+        "locationBytes": 32172897
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 14996
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 14996
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 14998
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 14997
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 14998
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 14996
+      }
+    ],
+    "health": {
+      "status": 200,
+      "ms": 13446,
+      "locationBytes": 0
+    },
+    "stats": null,
+    "exit": {
+      "code": 134,
+      "signal": null
+    },
+    "v8Oom": true,
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[13356:00000220BDF71000]    15121 ms: Mark-Compact (reduce) 508.4 (517.8) -> 508.3 (512.3) MB, pooled: 0 MB, 2.84 / 0.00 ms  (+ 0.0 ms in 8 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 7 ms) (average mu = 0.923, curre[13356:00000220BDF71000]    15133 ms: Mark-Compact 509.3 (512.3) -> 509.2 (516.3) MB, pooled: 0 MB, 7.94 / 0.00 ms  (average mu = 0.812, current mu = 0.369) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 00000220D80224DF \r\n"
+  }
+}
