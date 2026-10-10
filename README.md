@@ -118,7 +118,7 @@ The guide's snippet can take one of three remedies: keep `:location` as a placeh
 | `case-encode`       | `encodeURIComponent` on all values |         34,632 B | **32,101,028 B** |
 | `case-urltree`      | `Router#createUrlTree`             |         34,630 B |         31,976 B |
 
-`Location` at 16,000 B, each against an equal-size control ([`evidence/cases-4000-8000-16000.json`](evidence/cases-4000-8000-16000.json)). Both string remedies close the report's request but not the query one, where `case-encode` stays within 0.025% of `case-rawquery` and also reaches the V8 OOM with 3 concurrent requests at 256 MiB ([`case-encode`](evidence/threshold-256-16000-case-encode.json), [`case-rawquery`](evidence/threshold-256-16000-case-rawquery.json)).
+`Location` at 16,000 B, each against an equal-size control ([`evidence/cases-4000-8000-16000.json`](evidence/cases-4000-8000-16000.json)). Both string remedies close the report's request but not the query one, where `case-encode` stays within 0.025% of `case-rawquery` and also reaches the V8 OOM with 3 concurrent requests at 256 MiB ([`case-encode`](evidence/threshold-256-16000-case-encode.json), [`case-rawquery`](evidence/threshold-256-16000-case-rawquery.json)). `case-urltree` serves all 24 the scan tries ([`case-urltree`](evidence/threshold-256-16000-case-urltree.json)).
 
 ### Why encoding doesn't help
 
@@ -244,6 +244,7 @@ node scripts/threshold.mjs 512 8000
 node scripts/threshold.mjs 512 16000
 node scripts/threshold.mjs 256 16000 8 case-encode     # the same, for two of the remedy cases
 node scripts/threshold.mjs 256 16000 8 case-rawquery
+node scripts/threshold.mjs 256 16000 24 case-urltree   # no OOM, so it ends with "no V8 OOM up to 24"
 node scripts/validate.mjs 256 8000 12           # fixed concurrency, with a /health probe
 node scripts/validate.mjs 256 16000 3
 node scripts/validate.mjs 512 8000 22
