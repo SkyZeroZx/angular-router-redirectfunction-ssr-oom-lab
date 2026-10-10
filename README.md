@@ -245,6 +245,10 @@ node scripts/threshold.mjs 512 16000
 node scripts/threshold.mjs 256 16000 8 case-encode     # the same, for two of the remedy cases
 node scripts/threshold.mjs 256 16000 8 case-rawquery
 node scripts/threshold.mjs 256 16000 24 case-urltree   # no OOM, so it ends with "no V8 OOM up to 24"
+node scripts/threshold.mjs 256 8000 24 case-encode     # "Links that keep the query"
+node scripts/threshold.mjs 256 16000 3 case-encodelinks
+node scripts/threshold.mjs 256 8000 12 case-encodelinks
+node scripts/threshold.mjs 256 16000 24 case-treelinks # no OOM either
 node scripts/validate.mjs 256 8000 12           # fixed concurrency, with a /health probe
 node scripts/validate.mjs 256 16000 3
 node scripts/validate.mjs 512 8000 22
@@ -257,3 +261,15 @@ node scripts/validate-proxy.mjs 512 16000 5
 ```
 
 The server scripts start a fresh worker per case and check equal request sizes, a harmless control and one redirect call per request. The OOM scripts also require a V8 heap-limit error, and the proxy runs require `OOMKilled=false` and stop their containers afterwards. All traffic stays on `127.0.0.1`, and the proxy publishes only port 8080. Results and worker logs are saved in [`evidence/`](evidence/).
+
+## Links that keep the query
+
+`case-encodelinks` and `case-treelinks` are `case-encode` and `case-urltree` landing on a menu that links to each of the guide's three meals with `queryParamsHandling="merge"`, as filter and tab links do. `@angular/ssr` renders the destination before it answers with the redirect ([`ng.ts`](https://github.com/angular/angular-cli/blob/v22.2.2/packages/angular/ssr/src/utils/ng.ts#L107-L136)), so each link serializes the substituted query once more. Fewest concurrent query requests that reach a V8 OOM at 256 MiB ([`case-encode`](evidence/threshold-256-8000-case-encode.json) at 8,000 B, `case-encodelinks` at [16,000 B](evidence/threshold-256-16000-case-encodelinks.json) and [8,000 B](evidence/threshold-256-8000-case-encodelinks.json), [`case-treelinks`](evidence/threshold-256-16000-case-treelinks.json)):
+
+| Case               |      16,000 B | 8,000 B |
+| ------------------ | ------------: | ------: |
+| `case-encode`      |             3 |      12 |
+| `case-encodelinks` |             2 |       7 |
+| `case-treelinks`   | none up to 24 |       - |
+
+One `case-encodelinks` request alone still survives and returns its 32 MB `Location` in 3.9 s. With [`9146aecd06`](https://github.com/SkyZeroZx/angular/commit/9146aecd06) applied to `@angular/router` by hand and built like the [router fix](#toggle-the-fix-in-docker), it serves 24 concurrent requests at 16,000 B and 48 at 8,000 B, each with its control's `Location`.

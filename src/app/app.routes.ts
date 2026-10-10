@@ -1,8 +1,23 @@
-import { Component, inject } from "@angular/core";
-import { Router, Routes } from "@angular/router";
+import { Component, inject, Type } from "@angular/core";
+import { Router, RouterLink, Routes } from "@angular/router";
 
 @Component({ template: "<p>Menu</p>" })
 class Menu {}
+
+// The same menu with a link to each meal that keeps the current query, as filter and tab
+// links do.
+@Component({
+  imports: [RouterLink],
+  template: `
+    <p>Menu</p>
+    @for (meal of meals; track meal) {
+      <a [routerLink]="['..', meal]" queryParamsHandling="merge">{{ meal }}</a>
+    }
+  `,
+})
+class MenuWithLinks {
+  protected readonly meals = ["breakfast", "lunch", "dinner"];
+}
 
 @Component({ template: "<p>Not found</p>" })
 class NotFound {}
@@ -21,10 +36,10 @@ function count(name: string): void {
 }
 
 // Fresh objects per case, since the Router stores state on Route objects.
-const destinations = (): Routes => [
-  { path: "restaurant/:location/menu/breakfast", component: Menu },
-  { path: "restaurant/:location/menu/lunch", component: Menu },
-  { path: "restaurant/:location/menu/dinner", component: Menu },
+const destinations = (component: Type<unknown> = Menu): Routes => [
+  { path: "restaurant/:location/menu/breakfast", component },
+  { path: "restaurant/:location/menu/lunch", component },
+  { path: "restaurant/:location/menu/dinner", component },
 ];
 
 // Forwards the request's query string, every key and value through `encodeURIComponent`.
@@ -148,6 +163,53 @@ export const routes: Routes = [
         },
       },
       ...destinations(),
+    ],
+  },
+
+  // The two cases below are case-encode and case-urltree landing on MenuWithLinks.
+  // @angular/ssr renders the destination before it answers with the redirect, so each
+  // link serializes the redirect's query once more.
+
+  // case-encodelinks: case-encode.
+  {
+    path: "case-encodelinks",
+    children: [
+      {
+        path: "restaurant/:location/menu",
+        pathMatch: "full",
+        redirectTo: (snapshot) => {
+          count("case-encodelinks");
+          const location = encodeURIComponent(snapshot.params["location"]);
+          const qs = forwardQuery(snapshot.queryParams);
+          return `/case-encodelinks/restaurant/${location}/menu/breakfast?${qs}`;
+        },
+      },
+      ...destinations(MenuWithLinks),
+    ],
+  },
+
+  // case-treelinks: case-urltree.
+  {
+    path: "case-treelinks",
+    children: [
+      {
+        path: "restaurant/:location/menu",
+        pathMatch: "full",
+        redirectTo: (snapshot) => {
+          count("case-treelinks");
+          return inject(Router).createUrlTree(
+            [
+              "/case-treelinks",
+              "restaurant",
+              snapshot.params["location"],
+              "menu",
+              "breakfast",
+            ],
+            { queryParams: snapshot.queryParams },
+          );
+        },
+      },
+      ...destinations(MenuWithLinks),
     ],
   },
 

@@ -1,0 +1,121 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 256,
+  "targetBytes": 8000,
+  "caseName": "case-encodelinks",
+  "requestBytes": 8000,
+  "refs": 672,
+  "fillBytes": 3981,
+  "steps": [
+    {
+      "control": false,
+      "concurrency": 1,
+      "totalMs": 1008,
+      "exit": null,
+      "v8Oom": false,
+      "ok302": 1,
+      "locationBytes": 8040324,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 1008,
+      "redirectCalls": 1,
+      "stderrTail": ""
+    },
+    {
+      "control": false,
+      "concurrency": 2,
+      "totalMs": 1786,
+      "exit": null,
+      "v8Oom": false,
+      "ok302": 2,
+      "locationBytes": 8040324,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 1786,
+      "redirectCalls": 2,
+      "stderrTail": ""
+    },
+    {
+      "control": false,
+      "concurrency": 3,
+      "totalMs": 2797,
+      "exit": null,
+      "v8Oom": false,
+      "ok302": 3,
+      "locationBytes": 8040324,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 2796,
+      "redirectCalls": 3,
+      "stderrTail": ""
+    },
+    {
+      "control": false,
+      "concurrency": 4,
+      "totalMs": 3759,
+      "exit": null,
+      "v8Oom": false,
+      "ok302": 4,
+      "locationBytes": 8040324,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 3759,
+      "redirectCalls": 4,
+      "stderrTail": ""
+    },
+    {
+      "control": false,
+      "concurrency": 5,
+      "totalMs": 4864,
+      "exit": null,
+      "v8Oom": false,
+      "ok302": 5,
+      "locationBytes": 8040324,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 4864,
+      "redirectCalls": 5,
+      "stderrTail": ""
+    },
+    {
+      "control": false,
+      "concurrency": 6,
+      "totalMs": 5935,
+      "exit": null,
+      "v8Oom": false,
+      "ok302": 6,
+      "locationBytes": 8040324,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 5935,
+      "redirectCalls": 6,
+      "stderrTail": ""
+    },
+    {
+      "control": false,
+      "concurrency": 7,
+      "totalMs": 5313,
+      "exit": {
+        "code": 134,
+        "signal": null
+      },
+      "v8Oom": true,
+      "ok302": 4,
+      "locationBytes": 8040324,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 5313,
+      "redirectCalls": null,
+      "stderrTail": "\r\n 1: 00007FF719BE0CCF node::OnFatalError+1343\r\n 2: 00007FF71A82F697 v8::Function::NewInstance+423\r\n 3: 00007FF71A6300C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF71A62DD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF71A6483DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF71A654238 uv_timer_set_repeat+19096\r\n 7: 00007FF71A66F444 uv_timer_set_repeat+130212\r\n 8: 00007FF71A66F31C uv_timer_set_repeat+129916\r\n 9: 00007FF71A656419 uv_timer_set_repeat+27769\r\n10: 00007FF71A656582 uv_timer_set_repeat+28130\r\n11: 00007FF71A82F492 v8::String::NewFromUtf8+258\r\n12: 00007FF719AA61B1 v8::CTypeInfoBuilder<unsigned __int64>::Build+285985\r\n13: 00007FF71B8D7A7E v8::base::UnsignedDivisionByConstant<unsigned __int64>+734926\r\n14: 000002A830035662 \r\n"
+    }
+  ],
+  "minOomConcurrency": 7,
+  "controlAtThreshold": {
+    "control": true,
+    "concurrency": 7,
+    "totalMs": 382,
+    "exit": null,
+    "v8Oom": false,
+    "ok302": 7,
+    "locationBytes": 15972,
+    "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+    "slowestMs": 382,
+    "redirectCalls": 7,
+    "stderrTail": ""
+  }
+}

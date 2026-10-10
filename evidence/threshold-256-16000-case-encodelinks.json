@@ -1,0 +1,56 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 256,
+  "targetBytes": 16000,
+  "caseName": "case-encodelinks",
+  "requestBytes": 16000,
+  "refs": 1338,
+  "fillBytes": 7985,
+  "steps": [
+    {
+      "control": false,
+      "concurrency": 1,
+      "totalMs": 3876,
+      "exit": null,
+      "v8Oom": false,
+      "ok302": 1,
+      "locationBytes": 32081094,
+      "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+      "slowestMs": 3876,
+      "redirectCalls": 1,
+      "stderrTail": ""
+    },
+    {
+      "control": false,
+      "concurrency": 2,
+      "totalMs": 5307,
+      "exit": {
+        "code": 134,
+        "signal": null
+      },
+      "v8Oom": true,
+      "ok302": 0,
+      "locationBytes": 0,
+      "locationHead": "",
+      "slowestMs": 5307,
+      "redirectCalls": null,
+      "stderrTail": "failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF719BE0CCF node::OnFatalError+1343\r\n 2: 00007FF71A82F697 v8::Function::NewInstance+423\r\n 3: 00007FF71A6300C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF71A62DD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF71A6483DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF71A654238 uv_timer_set_repeat+19096\r\n 7: 00007FF71A66F11B uv_timer_set_repeat+129403\r\n 8: 00007FF71A1B8138 v8::internal::Version::GetSONAME+59288\r\n 9: 00007FF71A7F0B9C EVP_MD_CTX_set_update_fn+518060\r\n10: 00007FF71B97F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 00000246BAF0DC72 \r\n"
+    }
+  ],
+  "minOomConcurrency": 2,
+  "controlAtThreshold": {
+    "control": true,
+    "concurrency": 2,
+    "totalMs": 259,
+    "exit": null,
+    "v8Oom": false,
+    "ok302": 2,
+    "locationBytes": 31980,
+    "locationHead": "/case-encodelinks/restaurant/d/menu/breakfast?z=%3D%3D%3D%3D",
+    "slowestMs": 259,
+    "redirectCalls": 2,
+    "stderrTail": ""
+  }
+}
