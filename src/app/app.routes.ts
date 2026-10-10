@@ -84,7 +84,7 @@ export const routes: Routes = [
   },
   ...destinations(),
 
-  // The four cases below forward the request's query string and differ only in how the
+  // The five cases below forward the request's query string and differ only in how the
   // redirect is built.
 
   // case-rawquery: no suggestion applied.
@@ -134,6 +134,24 @@ export const routes: Routes = [
           const location = encodeURIComponent(snapshot.params["location"]);
           const qs = forwardQuery(snapshot.queryParams);
           return `/case-encode/restaurant/${location}/menu/breakfast?${qs}`;
+        },
+      },
+      ...destinations(),
+    ],
+  },
+
+  // case-usp: case-encode, forwarding the query with `URLSearchParams`.
+  {
+    path: "case-usp",
+    children: [
+      {
+        path: "restaurant/:location/menu",
+        pathMatch: "full",
+        redirectTo: (snapshot) => {
+          count("case-usp");
+          const location = encodeURIComponent(snapshot.params["location"]);
+          const qs = new URLSearchParams(snapshot.queryParams);
+          return `/case-usp/restaurant/${location}/menu/breakfast?${qs}`;
         },
       },
       ...destinations(),

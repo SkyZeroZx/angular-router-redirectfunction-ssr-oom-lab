@@ -130,7 +130,9 @@ The query request needs no percent-encoding of its own:
 
 A bare `:` is legal in a query value, so `a` arrives as `:z`. `encodeURIComponent` writes it as `%3Az`, and parsing the returned string decodes it back before `createQueryParams()` tests `v[0] === ':'`. Segments are read the same way, so an encoded value that starts with `:` still breaks the redirect: `/case-encode/restaurant/%3Adowntown/menu` throws `NG04001: Cannot redirect to '/case-encode/restaurant/%3Adowntown/menu/breakfast?'. Cannot find ':downtown'.` Every other encoded delimiter stays data: a `%2F`, `%3F` or `%26` in the returned string is never read as `/`, `?` or `&`.
 
-Only `case-urltree` holds under both requests, because a returned `UrlTree` skips the substitution. It uses `Router#createUrlTree`, since there is no exported `createUrlTree` function and `createUrlTreeFromSnapshot` throws on the snapshot a redirect function receives. The placeholder remedy can't cover `meal` either: only path parameters can be placeholders, so `:meal` throws `NG04001`.
+`URLSearchParams` encodes more characters than `encodeURIComponent`, but it also writes `:` as `%3A`. So `case-usp`, which forwards the query with `new URLSearchParams(snapshot.queryParams)`, ends where `case-encode` does: a 32,113,085 B `Location` at 16,000 B, and the V8 OOM at 256 MiB with 3 concurrent requests at 16,000 B and 12 at 8,000 B ([16,000 B](evidence/threshold-256-16000-case-usp.json), [8,000 B](evidence/threshold-256-8000-case-usp.json)). The 12,057 B it adds over `case-encode` come from the shorter `/case-usp` prefix, which leaves 3 more bytes of fill, not from the encoder.
+
+Only `case-urltree` holds under both requests, because a returned `UrlTree` skips the substitution. It uses `Router#createUrlTree`, since there is no exported `createUrlTree` function and `createUrlTreeFromSnapshot` throws on the snapshot a redirect function receives. The placeholder remedy can't cover `meal` either: the guide puts it in the path, and a `:meal` segment only reads route parameters, so it throws `NG04001`. A query placeholder such as `?meal=:meal` does copy the request's value.
 
 ### With the router fix
 
@@ -242,8 +244,10 @@ node scripts/threshold.mjs 256 8000             # fewest concurrent requests tha
 node scripts/threshold.mjs 256 16000
 node scripts/threshold.mjs 512 8000
 node scripts/threshold.mjs 512 16000
-node scripts/threshold.mjs 256 16000 8 case-encode     # the same, for two of the remedy cases
+node scripts/threshold.mjs 256 16000 8 case-encode     # the same, for three of the remedy cases
 node scripts/threshold.mjs 256 16000 8 case-rawquery
+node scripts/threshold.mjs 256 16000 8 case-usp
+node scripts/threshold.mjs 256 8000 24 case-usp        # "Why encoding doesn't help"
 node scripts/threshold.mjs 256 16000 24 case-urltree   # no OOM, so it ends with "no V8 OOM up to 24"
 node scripts/threshold.mjs 256 8000 24 case-encode     # "Links that keep the query"
 node scripts/threshold.mjs 256 16000 3 case-encodelinks
