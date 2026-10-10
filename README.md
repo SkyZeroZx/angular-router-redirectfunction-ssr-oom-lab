@@ -81,6 +81,8 @@ Fresh worker per case, default heap, median of 3 runs ([`evidence/ablation-8000.
 
 That is 1,007x and 2,007x the request. Every case made one `redirectTo` call, and `?meal=lunch` returned the same 31-byte `Location` on both builds. With the fix the candidate is exactly the size of its control.
 
+[`scripts/fuzz-fix.mjs`](scripts/fuzz-fix.mjs) compares the fix with stock using the real Router in plain Node, over 40,000 random route configs and URLs in two seeds ([`evidence/fuzz-fix-1.json`](evidence/fuzz-fix-1.json), [`evidence/fuzz-fix-2.json`](evidence/fuzz-fix-2.json)). Static `redirectTo` strings ended on the same URL or the same error on both (15,803 cases). Function strings without `:name` parts ended the same (3,094), and absolute ones ended where stock ends for the same string returned as a `UrlTree` (5,221). With the fix no result was longer than 2.77x what the function returned plus the request; stock went over 3x in 729 cases, up to 131x.
+
 ### Concurrent requests
 
 Fewest concurrent candidate requests that exhaust the heap. Every case starts a fresh worker and replays the equal-size control at the same concurrency. The control always returned 302 on a live worker.
@@ -158,6 +160,8 @@ node --expose-gc scripts/router-only.mjs 16000  # no server, cost of each Router
 node scripts/byte-scan.mjs                      # bytes out per byte in, for every byte value
 node scripts/ablation.mjs 8000                  # one request: stock vs fixed, candidate vs control
 node scripts/ablation.mjs 16000
+node scripts/fuzz-fix.mjs 20000 1               # stock vs fixed Router, random configs and URLs
+node scripts/fuzz-fix.mjs 20000 2
 node scripts/threshold.mjs 256 8000             # fewest concurrent requests that reach a V8 OOM
 node scripts/threshold.mjs 256 16000
 node scripts/threshold.mjs 512 8000
@@ -173,4 +177,4 @@ node scripts/validate-proxy.mjs 512 8000 22
 node scripts/validate-proxy.mjs 512 16000 5
 ```
 
-Each script starts a fresh worker per case and checks equal request sizes, a harmless control and one redirect call per request. The OOM scripts also require a V8 heap-limit error, and the proxy runs require `OOMKilled=false` and stop their containers afterwards. All traffic stays on `127.0.0.1`, and the proxy publishes only port 8080. Results and worker logs are saved in [`evidence/`](evidence/).
+The server scripts start a fresh worker per case and check equal request sizes, a harmless control and one redirect call per request. The OOM scripts also require a V8 heap-limit error, and the proxy runs require `OOMKilled=false` and stop their containers afterwards. All traffic stays on `127.0.0.1`, and the proxy publishes only port 8080. Results and worker logs are saved in [`evidence/`](evidence/).

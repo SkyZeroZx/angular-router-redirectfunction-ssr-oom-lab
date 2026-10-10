@@ -1,0 +1,15 @@
+{
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "iterations": 20000,
+  "seed": 2,
+  "seconds": 22,
+  "static": 7838,
+  "staticErrors": 4082,
+  "literalSame": 1523,
+  "literalExact": 2563,
+  "bounded": 5234,
+  "stockOverBound": 373,
+  "stockMaxRatio": 131,
+  "fixedMaxRatio": 2.77
+}
