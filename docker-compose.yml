@@ -2,12 +2,11 @@ services:
   app:
     build: .
     command:
-      - node
       - --max-old-space-size=${HEAP_MB:-256}
-      - dist/angular-router-redirectfunction-ssr-oom-lab/server/server.mjs
     environment:
       HOST: 0.0.0.0
       PORT: 4000
+      ROUTER_FIX: ${ROUTER_FIX:-off}
     mem_limit: 1536m
     restart: "no"
     healthcheck:

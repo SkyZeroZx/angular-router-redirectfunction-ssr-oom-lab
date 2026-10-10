@@ -151,6 +151,29 @@ FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memor
 
 With 11 requests the worker survives. At 16,000 B three are enough.
 
+## Toggle the fix in Docker
+
+The image holds two builds of the same app. One uses stock `@angular/router`. The other was built after [`scripts/router-fix.mjs`](scripts/router-fix.mjs) patched the Router: when `redirectTo` is a function, each `:name` is substituted at most once, and only if the request has that parameter. This is not the `posParams: null` variant used by `ablation.mjs` and `fuzz-fix.mjs`. `ROUTER_FIX` chooses the build when the container starts, and the first log line shows which one:
+
+```powershell
+docker compose build app
+$env:ROUTER_FIX = "on"   # or "off", the default
+docker compose up -d --wait
+docker compose logs app  # Router fix on: dist/angular-router-redirectfunction-ssr-oom-lab-fixed
+docker compose down
+```
+
+`validate-proxy.mjs` reads the same variable. With `on` it expects the attack to be served: every candidate returns 302, the worker stays up, and the `Location` stays under 4x the request.
+
+| Build | Request  | Concurrent | Result                                        |
+| ----- | -------- | ---------: | --------------------------------------------- |
+| off   | 16,000 B |          3 | V8 OOM, exit 139                              |
+| on    | 16,000 B |          3 | 3/3 HTTP 302, 31,987 B `Location`, 17 MB heap |
+| on    | 16,000 B |         24 | 24/24 HTTP 302, 31,987 B `Location`           |
+| on    | 8,000 B  |         48 | 48/48 HTTP 302, 15,961 B `Location`           |
+
+These results are at 256 MiB through Nginx ([`evidence/proxy-256-16000-flag-off.json`](evidence/proxy-256-16000-flag-off.json), [`evidence/proxy-256-16000-fixed.json`](evidence/proxy-256-16000-fixed.json), [`evidence/proxy-256-16000-fixed-x24.json`](evidence/proxy-256-16000-fixed-x24.json), [`evidence/proxy-256-8000-fixed-x48.json`](evidence/proxy-256-8000-fixed-x48.json)). With the fix, the first `:z` still copies the request's 7,981 B value, and `encodeUriQuery()` writes it out three times larger. The 31,987 B `Location` therefore grows linearly with the request, but it is only 781 B under Nginx's 32 KiB `proxy_buffer_size`.
+
 ## Reproduce the recorded evidence
 
 ```powershell

@@ -1,0 +1,150 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 256,
+  "targetBytes": 16000,
+  "concurrency": 3,
+  "routerFix": "on",
+  "requestBytes": 16000,
+  "markers": 1341,
+  "build": "Router fix on: dist/angular-router-redirectfunction-ssr-oom-lab-fixed",
+  "control": {
+    "responses": [
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 260
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 263
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 269
+      }
+    ],
+    "stats": {
+      "ssrRequests": 3,
+      "redirectCalls": 3,
+      "heapUsedBytes": 20235600
+    },
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 2220,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:24:18.091785834Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:24:20.22715765Z",
+            "End": "2026-10-10T05:24:20.342607258Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    }
+  },
+  "single": {
+    "responses": [
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 168
+      }
+    ],
+    "stats": {
+      "ssrRequests": 1,
+      "redirectCalls": 1,
+      "heapUsedBytes": 23911176
+    },
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 2598,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:24:30.278418118Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:24:32.41463819Z",
+            "End": "2026-10-10T05:24:32.541709417Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    }
+  },
+  "attack": {
+    "responses": [
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 180
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 270
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 277
+      }
+    ],
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 2970,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:24:41.679661975Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:24:43.807560665Z",
+            "End": "2026-10-10T05:24:43.938319328Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    },
+    "stats": {
+      "ssrRequests": 3,
+      "redirectCalls": 3,
+      "heapUsedBytes": 18068568
+    },
+    "appLogTail": "app-1  | Router fix on: dist/angular-router-redirectfunction-ssr-oom-lab-fixed\napp-1  | Angular SSR listening on http://0.0.0.0:4000\n"
+  }
+}

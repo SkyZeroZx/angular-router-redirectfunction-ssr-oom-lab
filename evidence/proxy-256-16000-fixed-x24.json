@@ -1,0 +1,372 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 256,
+  "targetBytes": 16000,
+  "concurrency": 24,
+  "routerFix": "on",
+  "requestBytes": 16000,
+  "markers": 1341,
+  "build": "Router fix on: dist/angular-router-redirectfunction-ssr-oom-lab-fixed",
+  "control": {
+    "responses": [
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 221
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 224
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 699
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 703
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 707
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 711
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 715
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 719
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 723
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 727
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 731
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 735
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 739
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 743
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 747
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 751
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 755
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 788
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 819
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 855
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 885
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 914
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 944
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 973
+      }
+    ],
+    "stats": {
+      "ssrRequests": 24,
+      "redirectCalls": 24,
+      "heapUsedBytes": 36699944
+    },
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 3366,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:25:05.625895216Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:25:07.754237833Z",
+            "End": "2026-10-10T05:25:07.869087859Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-10T05:25:09.869808575Z",
+            "End": "2026-10-10T05:25:10.128791186Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    }
+  },
+  "single": {
+    "responses": [
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 179
+      }
+    ],
+    "stats": {
+      "ssrRequests": 1,
+      "redirectCalls": 1,
+      "heapUsedBytes": 24062896
+    },
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 3762,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:25:17.837165484Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:25:19.957548425Z",
+            "End": "2026-10-10T05:25:20.080779348Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    }
+  },
+  "attack": {
+    "responses": [
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 252
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 256
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 963
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 967
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 971
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 976
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 980
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 984
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 988
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 993
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 998
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1002
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1007
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1012
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1016
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1021
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1025
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1029
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1033
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1037
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1041
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1045
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1049
+      },
+      {
+        "status": 302,
+        "locationBytes": 31987,
+        "ms": 1053
+      }
+    ],
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 4133,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:25:29.121635375Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:25:31.269910888Z",
+            "End": "2026-10-10T05:25:31.401546365Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-10T05:25:33.402657551Z",
+            "End": "2026-10-10T05:25:33.556706142Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    },
+    "stats": {
+      "ssrRequests": 24,
+      "redirectCalls": 24,
+      "heapUsedBytes": 51119528
+    },
+    "appLogTail": "app-1  | Router fix on: dist/angular-router-redirectfunction-ssr-oom-lab-fixed\napp-1  | Angular SSR listening on http://0.0.0.0:4000\n"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "angular": "22.2.2",
+  "heapMiB": 256,
+  "targetBytes": 16000,
+  "concurrency": 3,
+  "routerFix": "off",
+  "requestBytes": 16000,
+  "markers": 1341,
+  "build": "Router fix off: dist/angular-router-redirectfunction-ssr-oom-lab",
+  "control": {
+    "responses": [
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 260
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 261
+      },
+      {
+        "status": 302,
+        "locationBytes": 8046,
+        "ms": 267
+      }
+    ],
+    "stats": {
+      "ssrRequests": 3,
+      "redirectCalls": 3,
+      "heapUsedBytes": 20244552
+    },
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 1105,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:23:31.448996813Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:23:33.578683197Z",
+            "End": "2026-10-10T05:23:33.711030878Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    }
+  },
+  "single": {
+    "responses": [
+      {
+        "status": 502,
+        "locationBytes": 0,
+        "ms": 2964
+      }
+    ],
+    "stats": {
+      "ssrRequests": 1,
+      "redirectCalls": 1,
+      "heapUsedBytes": 141482096
+    },
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 1492,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:23:43.18731509Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 1,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:23:45.344560448Z",
+            "End": "2026-10-10T05:23:45.477542323Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-10T05:23:47.479087978Z",
+            "End": "2026-10-10T05:23:49.512720594Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (2s)"
+          }
+        ]
+      }
+    }
+  },
+  "attack": {
+    "responses": [
+      {
+        "status": 502,
+        "locationBytes": 0,
+        "ms": 5341
+      },
+      {
+        "status": 502,
+        "locationBytes": 0,
+        "ms": 7505
+      },
+      {
+        "status": 502,
+        "locationBytes": 0,
+        "ms": 7505
+      }
+    ],
+    "state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 139,
+      "Error": "",
+      "StartedAt": "2026-10-10T05:23:57.230689382Z",
+      "FinishedAt": "2026-10-10T05:24:08.090569426Z",
+      "Health": {
+        "Status": "unhealthy",
+        "FailingStreak": 2,
+        "Log": [
+          {
+            "Start": "2026-10-10T05:23:59.357262272Z",
+            "End": "2026-10-10T05:23:59.473194537Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-10T05:24:01.473874011Z",
+            "End": "2026-10-10T05:24:03.508452863Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (2s)"
+          },
+          {
+            "Start": "2026-10-10T05:24:05.509166699Z",
+            "End": "2026-10-10T05:24:07.541326388Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (2s)"
+          }
+        ]
+      }
+    },
+    "stats": null,
+    "appLogTail": "app-1  | Router fix off: dist/angular-router-redirectfunction-ssr-oom-lab\napp-1  | Angular SSR listening on http://0.0.0.0:4000\napp-1  | \napp-1  | <--- Last few GCs --->\napp-1  | \napp-1  | [1:0x7040e956e000]     8586 ms: Mark-Compact 227.3 (294.7) -> 196.2 (262.3) MB, pooled: 10 MB, 9.14 / 0.00 ms  (average mu = 0.947, current mu = 0.943) allocation failure; scavenge might not succeed\napp-1  | [1:0x7040e956e000]     8792 ms: Mark-Compact 258.9 (292.9) -> 256.1 (324.4) MB, pooled: 0 MB, 9.52 / 0.00 ms  (average mu = 0.951, current mu = 0.954) allocation failure; scavenge might not succeed\napp-1  | \napp-1  | FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\napp-1  | ----- Native stack trace -----\napp-1  | \n"
+  }
+}

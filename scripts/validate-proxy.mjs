@@ -15,6 +15,9 @@ assert(targetBytes >= 1000 && targetBytes <= 16000);
 assert(concurrency >= 1 && concurrency <= 128);
 const label = process.argv[5] ?? '';
 assert(/^[a-z0-9-]*$/.test(label), 'invalid evidence label');
+// ROUTER_FIX=on runs the container's fixed build and expects the attack to be served instead.
+const routerFix = process.env.ROUTER_FIX ?? 'off';
+assert(['on', 'off'].includes(routerFix), 'ROUTER_FIX must be on or off');
 const candidate = payload(targetBytes, false);
 const control = payload(targetBytes, true);
 assert.equal(Buffer.byteLength(candidate.path), Buffer.byteLength(control.path));
@@ -22,7 +25,7 @@ assert.equal(Buffer.byteLength(candidate.path), Buffer.byteLength(control.path))
 function docker(args, allowFailure = false) {
   const run = spawnSync('docker', ['compose', ...args], {
     cwd: root,
-    env: { ...process.env, HEAP_MB: String(heapMiB) },
+    env: { ...process.env, HEAP_MB: String(heapMiB), ROUTER_FIX: routerFix },
     encoding: 'utf8',
     timeout: 120000,
     maxBuffer: 1024 * 1024,
@@ -109,11 +112,12 @@ function fresh() {
 
 const result = {
   platform: process.platform, node: process.version, angular: '22.2.2',
-  heapMiB, targetBytes, concurrency,
+  heapMiB, targetBytes, concurrency, routerFix,
   requestBytes: Buffer.byteLength(candidate.path), markers: candidate.markers,
 };
 try {
   fresh();
+  result.build = docker(['logs', '--no-color', 'app'], true).match(/Router fix \w+: \S+/)?.[0] ?? null;
   result.control = { responses: await send(control.path, concurrency), stats: await stats(), state: appState() };
   fresh();
   result.single = { responses: await send(candidate.path, 1), stats: await stats(), state: appState() };
@@ -126,13 +130,25 @@ try {
   docker(['down', '-v', '--remove-orphans'], true);
 }
 mkdirSync(join(root, 'evidence'), { recursive: true });
-const file = join(root, 'evidence', `proxy-${heapMiB}-${targetBytes}${label ? '-' + label : ''}.json`);
+const fixed = routerFix === 'on' ? '-fixed' : '';
+const file = join(root, 'evidence', `proxy-${heapMiB}-${targetBytes}${fixed}${label ? '-' + label : ''}.json`);
 writeFileSync(file, JSON.stringify(result, null, 2) + '\n');
+assert(result.build?.startsWith(`Router fix ${routerFix}:`), `container did not start the ${routerFix} build: ` + file);
 assert.equal(result.control.responses.filter((r) => r.status === 302).length, concurrency, 'control failed: ' + file);
 assert.equal(result.control.stats?.redirectCalls, concurrency, 'control repeated redirects');
 assert.equal(result.single.stats?.redirectCalls, 1, 'single candidate repeated redirects');
-assert.match(result.attack.appLogTail, /Reached heap limit|JavaScript heap out of memory/, 'no V8 OOM: ' + file);
-assert.equal(result.attack.state?.OOMKilled, false, 'container OOM kill: ' + file);
-assert(result.attack.state?.ExitCode > 0, 'worker did not exit: ' + file);
-console.log(`PASS proxy ${heapMiB} MiB: ${result.requestBytes} B, HTTP/2 x${concurrency} -> V8 OOM; equal-size control ${concurrency}/${concurrency} HTTP 302; Docker OOMKilled=false`);
+if (routerFix === 'off') {
+  assert.match(result.attack.appLogTail, /Reached heap limit|JavaScript heap out of memory/, 'no V8 OOM: ' + file);
+  assert.equal(result.attack.state?.OOMKilled, false, 'container OOM kill: ' + file);
+  assert(result.attack.state?.ExitCode > 0, 'worker did not exit: ' + file);
+  console.log(`PASS proxy ${heapMiB} MiB: ${result.requestBytes} B, HTTP/2 x${concurrency} -> V8 OOM; equal-size control ${concurrency}/${concurrency} HTTP 302; Docker OOMKilled=false`);
+} else {
+  const locationBytes = Math.max(...result.attack.responses.map((r) => r.locationBytes));
+  assert.doesNotMatch(result.attack.appLogTail, /Reached heap limit|JavaScript heap out of memory/, 'V8 OOM with the fix: ' + file);
+  assert.equal(result.attack.state?.Running, true, 'worker exited with the fix: ' + file);
+  assert.equal(result.attack.responses.filter((r) => r.status === 302).length, concurrency, 'candidate failed with the fix: ' + file);
+  assert.equal(result.attack.stats?.redirectCalls, concurrency, 'candidate repeated redirects with the fix');
+  assert(locationBytes < 4 * result.requestBytes, 'fixed build still amplifies: ' + file);
+  console.log(`PASS proxy ${heapMiB} MiB with the router fix: ${result.requestBytes} B, HTTP/2 x${concurrency} -> ${concurrency}/${concurrency} HTTP 302 with up to ${locationBytes} B Location, worker up`);
+}
 console.log(file);
