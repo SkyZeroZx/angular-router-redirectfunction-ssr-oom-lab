@@ -8,26 +8,26 @@
   "stock": {
     "normal": {
       "status": 302,
-      "ms": 14,
+      "ms": 17,
       "locationBytes": 31,
       "locationHead": "/restaurant/downtown/menu/lunch",
       "redirectCalls": 1,
       "msRuns": [
         7,
-        14,
-        16
+        17,
+        18
       ]
     },
     "candidate": {
       "status": 302,
-      "ms": 3660,
+      "ms": 3899,
       "locationBytes": 32112927,
       "locationHead": "/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D",
       "redirectCalls": 1,
       "msRuns": [
-        3706,
-        3660,
-        3562
+        4478,
+        3732,
+        3899
       ]
     },
     "control": {
@@ -39,7 +39,7 @@
       "msRuns": [
         44,
         44,
-        45
+        44
       ]
     }
   },
@@ -52,20 +52,20 @@
       "redirectCalls": 1,
       "msRuns": [
         7,
-        13,
+        14,
         7
       ]
     },
     "candidate": {
       "status": 302,
-      "ms": 46,
+      "ms": 44,
       "locationBytes": 8046,
       "locationHead": "/restaurant/a/menu/lunch?0=:z&1=:z&2=:z&3=:z&4=:z&5=:z&6=:z&",
       "redirectCalls": 1,
       "msRuns": [
-        48,
-        45,
-        46
+        43,
+        44,
+        44
       ]
     },
     "control": {
@@ -75,9 +75,9 @@
       "locationHead": "/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&",
       "redirectCalls": 1,
       "msRuns": [
+        43,
         44,
-        46,
-        44
+        45
       ]
     }
   }

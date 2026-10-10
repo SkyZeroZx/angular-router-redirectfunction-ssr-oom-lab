@@ -70,13 +70,13 @@ With `c` bytes per reference and `e` bytes out per fill byte, a request of `B` b
 
 ### One request
 
-Fresh worker per case, default heap, median of 3 runs ([`evidence/ablation-8000.json`](evidence/ablation-8000.json), [`evidence/ablation-16000.json`](evidence/ablation-16000.json)). "Fixed" is the same build with the `:` substitution skipped when `redirectTo` is a function ([`scripts/ablation.mjs`](scripts/ablation.mjs)).
+Fresh worker per case, default heap, median of 3 runs ([`evidence/ablation-8000.json`](evidence/ablation-8000.json), [`evidence/ablation-16000.json`](evidence/ablation-16000.json)). "Fixed" is the same build with the proposed fix: when `redirectTo` is a function, `posParams` is passed as `null`, so its string keeps `:name` segments and query values as written ([`scripts/ablation.mjs`](scripts/ablation.mjs)).
 
 | Request            | References | Stock `Location` |   Stock time | Fixed `Location` | Fixed time |
 | ------------------ | ---------: | ---------------: | -----------: | ---------------: | ---------: |
-| 8,000 B candidate  |        675 |  **8,056,107 B** |   **662 ms** |          4,032 B |      27 ms |
-| 8,000 B control    |        675 |          4,032 B |        28 ms |          4,032 B |      27 ms |
-| 16,000 B candidate |      1,341 | **32,112,927 B** | **3,660 ms** |          8,046 B |      46 ms |
+| 8,000 B candidate  |        675 |  **8,056,107 B** |   **742 ms** |          4,032 B |      41 ms |
+| 8,000 B control    |        675 |          4,032 B |        30 ms |          4,032 B |      38 ms |
+| 16,000 B candidate |      1,341 | **32,112,927 B** | **3,899 ms** |          8,046 B |      44 ms |
 | 16,000 B control   |      1,341 |          8,046 B |        44 ms |          8,046 B |      44 ms |
 
 That is 1,007x and 2,007x the request. Every case made one `redirectTo` call, and `?meal=lunch` returned the same 31-byte `Location` on both builds. With the fix the candidate is exactly the size of its control.

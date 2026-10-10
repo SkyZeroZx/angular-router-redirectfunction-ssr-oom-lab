@@ -1,6 +1,7 @@
-// Causal check for the proposed router fix. Copies the production build, disables the two
-// ':' substitution branches only when `redirectTo` is a function, and compares both builds
-// with single requests on fresh workers: a normal redirect, the candidate and its control.
+// Causal check for the proposed router fix. Copies the production build and applies it: when
+// `redirectTo` is a function, `posParams` is passed as null, so its string keeps `:name` segments
+// and query values as written. Compares both builds with single requests on fresh workers: a
+// normal redirect, the candidate and its control.
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -25,16 +26,17 @@ rmSync(fixedDir, { recursive: true, force: true });
 cpSync(stockDir, fixedDir, { recursive: true });
 const mainFile = join(fixedDir, 'server', 'main.server.mjs');
 let src = readFileSync(mainFile, 'utf8');
-// ApplyRedirects.applyRedirectCommands: remember whether this result came from a function.
+// ApplyRedirects.applyRedirectCommands: posParams only for a static redirectTo.
 src = patchOnce(src,
-  /(applyRedirectCommands\(\w+,(\w+),\w+,\w+,\w+\)\{let \w+=await \w+\(\2,\w+,\w+\);if\(\w+ instanceof \w+\)throw new \w+\(\w+\);)(let \w+=this\.applyRedirectCreateUrlTree\()/,
-  '$1this.fromFunction=typeof $2=="function";$3', 'applyRedirectCommands');
-// ApplyRedirects.createSegments: no ':name' lookup for function results.
-src = patchOnce(src, /(createSegments\(\w+,\w+,\w+,\w+\)\{return \w+\.map\(\w+=>\w+\.path\[0\]===":")\?/,
-  '$1&&!this.fromFunction?', 'createSegments');
-// ApplyRedirects.createQueryParams: no ':name' copy for function results.
-src = patchOnce(src, /(createQueryParams\(\w+,\w+\)\{let \w+=\{\};return Object\.entries\(\w+\)\.forEach\(\(\[\w+,\w+\]\)=>\{if\()(typeof \w+=="string"&&\w+\[0\]===":"\))/,
-  '$1!this.fromFunction&&$2', 'createQueryParams');
+  /(applyRedirectCommands\((\w+),(\w+),(\w+),\w+,\w+\)\{let (\w+)=await \w+\(\3,\w+,\w+\);if\(\5 instanceof \w+\)throw new \w+\(\5\);let \w+=this\.applyRedirectCreateUrlTree\(\5,this\.urlSerializer\.parse\(\5\),\2,)\4\)/,
+  '$1typeof $3=="string"?$4:null)', 'applyRedirectCommands');
+// ApplyRedirects.applyRedirectCreateUrlTree: no ':name' query copy without posParams.
+src = patchOnce(src,
+  /(applyRedirectCreateUrlTree\(\w+,(\w+),\w+,(\w+)\)\{let \w+=this\.createSegmentGroup\(\w+,\2\.root,\w+,\3\);return new \w+\(\w+,)(this\.createQueryParams\(\2\.queryParams,this\.urlTree\.queryParams\))/,
+  '$1$3===null?$2.queryParams:$4', 'applyRedirectCreateUrlTree');
+// ApplyRedirects.createSegments: no ':name' segment lookup without posParams.
+src = patchOnce(src, /(createSegments\(\w+,\w+,\w+,(\w+)\)\{return \w+\.map\((\w+)=>)(\3\.path\[0\]===":"\?)/,
+  '$1$2!==null&&$4', 'createSegments');
 writeFileSync(mainFile, src);
 
 async function freePort() {
