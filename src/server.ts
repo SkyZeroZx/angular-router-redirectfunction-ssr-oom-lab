@@ -34,10 +34,11 @@ app.use((req, res, next) => {
 });
 
 if (isMainModule(import.meta.url)) {
-  app.listen(
-    Number(process.env["PORT"] ?? 4000),
-    process.env["HOST"] ?? "127.0.0.1",
-  );
+  const port = Number(process.env["PORT"] ?? 4000);
+  const host = process.env["HOST"] ?? "127.0.0.1";
+  app.listen(port, host, () => {
+    console.log(`Angular SSR listening on http://${host}:${port}`);
+  });
 }
 
 export const reqHandler = createNodeRequestHandler(app);

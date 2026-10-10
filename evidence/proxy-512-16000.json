@@ -6,39 +6,39 @@
   "targetBytes": 16000,
   "concurrency": 5,
   "requestBytes": 16000,
-  "markers": 1343,
+  "markers": 1341,
   "control": {
     "responses": [
       {
         "status": 302,
-        "locationBytes": 8047,
-        "ms": 353
+        "locationBytes": 8046,
+        "ms": 254
       },
       {
         "status": 302,
-        "locationBytes": 8047,
-        "ms": 355
+        "locationBytes": 8046,
+        "ms": 257
       },
       {
         "status": 302,
-        "locationBytes": 8047,
-        "ms": 360
+        "locationBytes": 8046,
+        "ms": 263
       },
       {
         "status": 302,
-        "locationBytes": 8047,
-        "ms": 365
+        "locationBytes": 8046,
+        "ms": 341
       },
       {
         "status": 302,
-        "locationBytes": 8047,
-        "ms": 370
+        "locationBytes": 8046,
+        "ms": 349
       }
     ],
     "stats": {
       "ssrRequests": 5,
       "redirectCalls": 5,
-      "heapUsedBytes": 25168792
+      "heapUsedBytes": 21103976
     },
     "state": {
       "Status": "running",
@@ -47,18 +47,18 @@
       "Restarting": false,
       "OOMKilled": false,
       "Dead": false,
-      "Pid": 1871,
+      "Pid": 1941,
       "ExitCode": 0,
       "Error": "",
-      "StartedAt": "2026-10-10T01:10:56.722254432Z",
+      "StartedAt": "2026-10-10T02:51:26.100923889Z",
       "FinishedAt": "0001-01-01T00:00:00Z",
       "Health": {
         "Status": "healthy",
         "FailingStreak": 0,
         "Log": [
           {
-            "Start": "2026-10-10T01:10:58.865182903Z",
-            "End": "2026-10-10T01:10:58.998510586Z",
+            "Start": "2026-10-10T02:51:28.510740896Z",
+            "End": "2026-10-10T02:51:28.62648762Z",
             "ExitCode": 0,
             "Output": ""
           }
@@ -71,13 +71,13 @@
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 2994
+        "ms": 2823
       }
     ],
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 141737528
+      "heapUsedBytes": 141489208
     },
     "state": {
       "Status": "running",
@@ -86,26 +86,26 @@
       "Restarting": false,
       "OOMKilled": false,
       "Dead": false,
-      "Pid": 2271,
+      "Pid": 2316,
       "ExitCode": 0,
       "Error": "",
-      "StartedAt": "2026-10-10T01:11:08.471015367Z",
+      "StartedAt": "2026-10-10T02:51:37.816539554Z",
       "FinishedAt": "0001-01-01T00:00:00Z",
       "Health": {
         "Status": "healthy",
-        "FailingStreak": 1,
+        "FailingStreak": 0,
         "Log": [
           {
-            "Start": "2026-10-10T01:11:10.612908919Z",
-            "End": "2026-10-10T01:11:10.746463744Z",
+            "Start": "2026-10-10T02:51:39.936749166Z",
+            "End": "2026-10-10T02:51:40.046195208Z",
             "ExitCode": 0,
             "Output": ""
           },
           {
-            "Start": "2026-10-10T01:11:12.747953347Z",
-            "End": "2026-10-10T01:11:14.784208084Z",
-            "ExitCode": -1,
-            "Output": "Health check exceeded timeout (2s)"
+            "Start": "2026-10-10T02:51:42.046625382Z",
+            "End": "2026-10-10T02:51:43.932930774Z",
+            "ExitCode": 0,
+            "Output": ""
           }
         ]
       }
@@ -116,27 +116,27 @@
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 12645
+        "ms": 11930
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 13193
+        "ms": 12458
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 16390
+        "ms": 15590
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 16390
+        "ms": 15589
       },
       {
         "status": 502,
         "locationBytes": 0,
-        "ms": 16390
+        "ms": 15589
       }
     ],
     "state": {
@@ -149,39 +149,39 @@
       "Pid": 0,
       "ExitCode": 139,
       "Error": "",
-      "StartedAt": "2026-10-10T01:11:22.824375991Z",
-      "FinishedAt": "2026-10-10T01:11:42.754876975Z",
+      "StartedAt": "2026-10-10T02:51:51.692956464Z",
+      "FinishedAt": "2026-10-10T02:52:10.841852724Z",
       "Health": {
         "Status": "unhealthy",
         "FailingStreak": 4,
         "Log": [
           {
-            "Start": "2026-10-10T01:11:24.96156727Z",
-            "End": "2026-10-10T01:11:25.102545963Z",
+            "Start": "2026-10-10T02:51:53.813462345Z",
+            "End": "2026-10-10T02:51:53.929746499Z",
             "ExitCode": 0,
             "Output": ""
           },
           {
-            "Start": "2026-10-10T01:11:27.364412464Z",
-            "End": "2026-10-10T01:11:29.400599036Z",
+            "Start": "2026-10-10T02:51:55.930599669Z",
+            "End": "2026-10-10T02:51:57.962015611Z",
             "ExitCode": -1,
             "Output": "Health check exceeded timeout (2s)"
           },
           {
-            "Start": "2026-10-10T01:11:31.401751167Z",
-            "End": "2026-10-10T01:11:33.437356507Z",
+            "Start": "2026-10-10T02:52:00.265234997Z",
+            "End": "2026-10-10T02:52:02.298199885Z",
             "ExitCode": -1,
             "Output": "Health check exceeded timeout (2s)"
           },
           {
-            "Start": "2026-10-10T01:11:35.438434889Z",
-            "End": "2026-10-10T01:11:37.479045729Z",
+            "Start": "2026-10-10T02:52:04.298775039Z",
+            "End": "2026-10-10T02:52:06.332382533Z",
             "ExitCode": -1,
             "Output": "Health check exceeded timeout (2s)"
           },
           {
-            "Start": "2026-10-10T01:11:39.479606612Z",
-            "End": "2026-10-10T01:11:41.514833886Z",
+            "Start": "2026-10-10T02:52:08.332942504Z",
+            "End": "2026-10-10T02:52:10.375728732Z",
             "ExitCode": -1,
             "Output": "Health check exceeded timeout (2s)"
           }
@@ -189,6 +189,6 @@
       }
     },
     "stats": null,
-    "appLogTail": "app-1  | \napp-1  | <--- Last few GCs --->\napp-1  | \napp-1  | [1:0x7486a553e000]    16774 ms: Mark-Compact (reduce) 509.2 (514.3) -> 509.1 (512.8) MB, pooled: 0 MB, 3.23 / 0.00 ms  (+ 0.0 ms in 9 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 9 ms) (average mu = 0.931, current mu [1:0x7486a553e000]    16788 ms: Mark-Compact 510.1 (512.8) -> 510.0 (516.8) MB, pooled: 0 MB, 8.36 / 0.00 ms  (average mu = 0.867, current mu = 0.420) allocation failure; scavenge might not succeed\napp-1  | \napp-1  | FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\napp-1  | ----- Native stack trace -----\napp-1  | \n"
+    "appLogTail": "app-1  | \napp-1  | <--- Last few GCs --->\napp-1  | \napp-1  | [1:0x71f93229e000]    16013 ms: Mark-Compact (reduce) 509.2 (518.2) -> 509.1 (512.7) MB, pooled: 0 MB, 2.73 / 0.00 ms  (+ 0.1 ms in 8 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 8 ms) (average mu = 0.946, current mu [1:0x71f93229e000]    16026 ms: Mark-Compact 510.1 (512.7) -> 510.0 (516.7) MB, pooled: 0 MB, 6.92 / 0.00 ms  (average mu = 0.891, current mu = 0.467) allocation failure; scavenge might not succeed\napp-1  | \napp-1  | FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\napp-1  | ----- Native stack trace -----\napp-1  | \n"
   }
 }

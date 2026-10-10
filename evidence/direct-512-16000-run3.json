@@ -4,48 +4,58 @@
   "angular": "22.2.2",
   "heapMiB": 512,
   "targetBytes": 16000,
-  "concurrency": 5,
+  "concurrency": 7,
   "benign": {
     "control": true,
-    "concurrency": 5,
+    "concurrency": 7,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "status": 302,
-        "ms": 134,
-        "locationBytes": 8047
+        "ms": 144,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 258,
-        "locationBytes": 8047
+        "ms": 326,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 262,
-        "locationBytes": 8047
+        "ms": 330,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 266,
-        "locationBytes": 8047
+        "ms": 333,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 270,
-        "locationBytes": 8047
+        "ms": 337,
+        "locationBytes": 8046
+      },
+      {
+        "status": 302,
+        "ms": 341,
+        "locationBytes": 8046
+      },
+      {
+        "status": 302,
+        "ms": 344,
+        "locationBytes": 8046
       }
     ],
     "health": {
       "status": 200,
-      "ms": 213,
+      "ms": 282,
       "locationBytes": 0
     },
     "stats": {
-      "ssrRequests": 5,
-      "redirectCalls": 5,
-      "heapUsedBytes": 19266176
+      "ssrRequests": 7,
+      "redirectCalls": 7,
+      "heapUsedBytes": 25293136
     },
     "exit": null,
     "v8Oom": false,
@@ -55,23 +65,23 @@
     "control": false,
     "concurrency": 1,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "status": 302,
-        "ms": 4025,
-        "locationBytes": 32172897
+        "ms": 3861,
+        "locationBytes": 32112927
       }
     ],
     "health": {
       "status": 200,
-      "ms": 2809,
+      "ms": 2833,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 112085136
+      "heapUsedBytes": 111884120
     },
     "exit": null,
     "v8Oom": false,
@@ -79,34 +89,43 @@
   },
   "attack": {
     "control": false,
-    "concurrency": 5,
+    "concurrency": 7,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
-        "error": "ECONNRESET",
-        "ms": 11121
+        "status": 302,
+        "ms": 3902,
+        "locationBytes": 32112927
       },
       {
         "error": "ECONNRESET",
-        "ms": 11110
+        "ms": 13046
       },
       {
         "error": "ECONNRESET",
-        "ms": 11121
+        "ms": 13045
       },
       {
         "error": "ECONNRESET",
-        "ms": 11121
+        "ms": 13045
       },
       {
         "error": "ECONNRESET",
-        "ms": 11122
+        "ms": 13045
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 13045
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 13045
       }
     ],
     "health": {
       "error": "ECONNRESET",
-      "ms": 11083
+      "ms": 13005
     },
     "stats": null,
     "exit": {
@@ -114,6 +133,6 @@
       "signal": null
     },
     "v8Oom": true,
-    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[18292:0000022C5B650000]    11127 ms: Mark-Compact (reduce) 508.7 (513.5) -> 508.6 (512.3) MB, pooled: 0 MB, 1.99 / 0.00 ms  (+ 0.0 ms in 10 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 6 ms) (average mu = 0.912, curr[18292:0000022C5B650000]    11139 ms: Mark-Compact 509.6 (512.3) -> 509.5 (516.3) MB, pooled: 0 MB, 7.22 / 0.00 ms  (average mu = 0.779, current mu = 0.397) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 0000022C0014EBC9 \r\n"
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[28132:0000020C374A6000]    13082 ms: Mark-Compact (reduce) 535.5 (543.2) -> 535.4 (537.2) MB, pooled: 0 MB, 4.88 / 0.00 ms  (+ 0.1 ms in 1 steps since start of marking, biggest step 0.1 ms, walltime since start of marking 91 ms) (average mu = 0.944, curr\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F444 uv_timer_set_repeat+130212\r\n 8: 00007FF6FE20F31C uv_timer_set_repeat+129916\r\n 9: 00007FF6FE1F6419 uv_timer_set_repeat+27769\r\n10: 00007FF6FE1F6582 uv_timer_set_repeat+28130\r\n11: 00007FF6FE3CF492 v8::String::NewFromUtf8+258\r\n12: 00007FF6FD6461B1 v8::CTypeInfoBuilder<unsigned __int64>::Build+285985\r\n13: 00007FF6FF477A7E v8::base::UnsignedDivisionByConstant<unsigned __int64>+734926\r\n14: 0000020C4FD7CEE1 \r\n"
   }
 }

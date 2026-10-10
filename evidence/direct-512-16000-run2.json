@@ -4,48 +4,58 @@
   "angular": "22.2.2",
   "heapMiB": 512,
   "targetBytes": 16000,
-  "concurrency": 5,
+  "concurrency": 7,
   "benign": {
     "control": true,
-    "concurrency": 5,
+    "concurrency": 7,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "status": 302,
-        "ms": 138,
-        "locationBytes": 8047
+        "ms": 136,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 271,
-        "locationBytes": 8047
+        "ms": 311,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 275,
-        "locationBytes": 8047
+        "ms": 315,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 278,
-        "locationBytes": 8047
+        "ms": 319,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 282,
-        "locationBytes": 8047
+        "ms": 323,
+        "locationBytes": 8046
+      },
+      {
+        "status": 302,
+        "ms": 326,
+        "locationBytes": 8046
+      },
+      {
+        "status": 302,
+        "ms": 330,
+        "locationBytes": 8046
       }
     ],
     "health": {
       "status": 200,
-      "ms": 238,
+      "ms": 264,
       "locationBytes": 0
     },
     "stats": {
-      "ssrRequests": 5,
-      "redirectCalls": 5,
-      "heapUsedBytes": 19237000
+      "ssrRequests": 7,
+      "redirectCalls": 7,
+      "heapUsedBytes": 24816424
     },
     "exit": null,
     "v8Oom": false,
@@ -55,23 +65,23 @@
     "control": false,
     "concurrency": 1,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "status": 302,
-        "ms": 3977,
-        "locationBytes": 32172897
+        "ms": 4058,
+        "locationBytes": 32112927
       }
     ],
     "health": {
       "status": 200,
-      "ms": 2923,
+      "ms": 2967,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 112066128
+      "heapUsedBytes": 111887448
     },
     "exit": null,
     "v8Oom": false,
@@ -79,48 +89,50 @@
   },
   "attack": {
     "control": false,
-    "concurrency": 5,
+    "concurrency": 7,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "status": 302,
-        "ms": 12374,
-        "locationBytes": 32172897
+        "ms": 4017,
+        "locationBytes": 32112927
       },
       {
-        "status": 302,
-        "ms": 14581,
-        "locationBytes": 32172897
+        "error": "ECONNRESET",
+        "ms": 12723
       },
       {
-        "status": 302,
-        "ms": 16405,
-        "locationBytes": 32172897
+        "error": "ECONNRESET",
+        "ms": 12722
       },
       {
-        "status": 302,
-        "ms": 6167,
-        "locationBytes": 32172897
+        "error": "ECONNRESET",
+        "ms": 12722
       },
       {
-        "status": 302,
-        "ms": 7557,
-        "locationBytes": 32172897
+        "error": "ECONNRESET",
+        "ms": 12722
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 12723
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 12723
       }
     ],
     "health": {
-      "status": 200,
-      "ms": 9611,
-      "locationBytes": 0
+      "error": "ECONNRESET",
+      "ms": 12682
     },
-    "stats": {
-      "ssrRequests": 5,
-      "redirectCalls": 5,
-      "heapUsedBytes": 411903736
+    "stats": null,
+    "exit": {
+      "code": 134,
+      "signal": null
     },
-    "exit": null,
-    "v8Oom": false,
-    "stderrTail": ""
+    "v8Oom": true,
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[25932:000002026AD35000]    12756 ms: Mark-Compact (reduce) 535.5 (543.2) -> 535.4 (537.5) MB, pooled: 0 MB, 4.53 / 0.00 ms  (+ 0.1 ms in 1 steps since start of marking, biggest step 0.1 ms, walltime since start of marking 77 ms) (average mu = 0.941, curr\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F444 uv_timer_set_repeat+130212\r\n 8: 00007FF6FE20F31C uv_timer_set_repeat+129916\r\n 9: 00007FF6FE1F6419 uv_timer_set_repeat+27769\r\n10: 00007FF6FE1F6582 uv_timer_set_repeat+28130\r\n11: 00007FF6FE3CF492 v8::String::NewFromUtf8+258\r\n12: 00007FF6FD6461B1 v8::CTypeInfoBuilder<unsigned __int64>::Build+285985\r\n13: 00007FF6FF477A7E v8::base::UnsignedDivisionByConstant<unsigned __int64>+734926\r\n14: 000002020807F2E1 \r\n"
   }
 }

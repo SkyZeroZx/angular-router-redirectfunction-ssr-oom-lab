@@ -9,78 +9,78 @@
     "control": true,
     "concurrency": 12,
     "requestBytes": 8000,
-    "markers": 676,
+    "markers": 675,
     "responses": [
       {
         "status": 302,
-        "ms": 126,
-        "locationBytes": 4027
-      },
-      {
-        "status": 302,
-        "ms": 319,
-        "locationBytes": 4027
-      },
-      {
-        "status": 302,
-        "ms": 321,
-        "locationBytes": 4027
-      },
-      {
-        "status": 302,
-        "ms": 323,
-        "locationBytes": 4027
-      },
-      {
-        "status": 302,
-        "ms": 325,
-        "locationBytes": 4027
-      },
-      {
-        "status": 302,
-        "ms": 327,
-        "locationBytes": 4027
-      },
-      {
-        "status": 302,
-        "ms": 329,
-        "locationBytes": 4027
+        "ms": 137,
+        "locationBytes": 4032
       },
       {
         "status": 302,
         "ms": 331,
-        "locationBytes": 4027
+        "locationBytes": 4032
       },
       {
         "status": 302,
         "ms": 333,
-        "locationBytes": 4027
+        "locationBytes": 4032
       },
       {
         "status": 302,
         "ms": 335,
-        "locationBytes": 4027
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 337,
-        "locationBytes": 4027
+        "ms": 338,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 339,
-        "locationBytes": 4027
+        "ms": 340,
+        "locationBytes": 4032
+      },
+      {
+        "status": 302,
+        "ms": 342,
+        "locationBytes": 4032
+      },
+      {
+        "status": 302,
+        "ms": 343,
+        "locationBytes": 4032
+      },
+      {
+        "status": 302,
+        "ms": 345,
+        "locationBytes": 4032
+      },
+      {
+        "status": 302,
+        "ms": 347,
+        "locationBytes": 4032
+      },
+      {
+        "status": 302,
+        "ms": 349,
+        "locationBytes": 4032
+      },
+      {
+        "status": 302,
+        "ms": 351,
+        "locationBytes": 4032
       }
     ],
     "health": {
       "status": 200,
-      "ms": 276,
+      "ms": 297,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 12,
       "redirectCalls": 12,
-      "heapUsedBytes": 24892048
+      "heapUsedBytes": 22342800
     },
     "exit": null,
     "v8Oom": false,
@@ -90,23 +90,23 @@
     "control": false,
     "concurrency": 1,
     "requestBytes": 8000,
-    "markers": 676,
+    "markers": 675,
     "responses": [
       {
         "status": 302,
-        "ms": 761,
-        "locationBytes": 8086283
+        "ms": 757,
+        "locationBytes": 8056107
       }
     ],
     "health": {
       "status": 200,
-      "ms": 727,
+      "ms": 734,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 47999288
+      "heapUsedBytes": 39661768
     },
     "exit": null,
     "v8Oom": false,
@@ -116,68 +116,67 @@
     "control": false,
     "concurrency": 12,
     "requestBytes": 8000,
-    "markers": 676,
+    "markers": 675,
     "responses": [
       {
         "status": 302,
-        "ms": 769,
-        "locationBytes": 8086283
+        "ms": 777,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 5689,
-        "locationBytes": 8086283
+        "ms": 5623,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 5834,
-        "locationBytes": 8086283
+        "ms": 5754,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 5972,
-        "locationBytes": 8086283
+        "ms": 5887,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 6123,
-        "locationBytes": 8086283
+        "ms": 6035,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 6269,
-        "locationBytes": 8086283
+        "ms": 6194,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 6399,
-        "locationBytes": 8086283
-      },
-      {
-        "status": 302,
-        "ms": 6540,
-        "locationBytes": 8086283
+        "ms": 6330,
+        "locationBytes": 8056107
       },
       {
         "error": "ECONNRESET",
-        "ms": 6549
+        "ms": 6448
       },
       {
         "error": "ECONNRESET",
-        "ms": 6549
+        "ms": 6449
       },
       {
         "error": "ECONNRESET",
-        "ms": 6549
+        "ms": 6449
       },
       {
         "error": "ECONNRESET",
-        "ms": 6549
+        "ms": 6449
+      },
+      {
+        "error": "ECONNRESET",
+        "ms": 6449
       }
     ],
     "health": {
       "status": 200,
-      "ms": 5395,
+      "ms": 5332,
       "locationBytes": 0
     },
     "stats": null,
@@ -186,6 +185,6 @@
       "signal": null
     },
     "v8Oom": true,
-    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[27028:0000019D85FB8000]     6578 ms: Mark-Compact (reduce) 254.5 (258.2) -> 254.4 (256.7) MB, pooled: 0 MB, 2.24 / 0.00 ms  (+ 0.0 ms in 8 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 7 ms) (average mu = 0.846, curre[27028:0000019D85FB8000]     6591 ms: Mark-Compact 255.4 (256.7) -> 255.3 (260.7) MB, pooled: 0 MB, 8.61 / 0.00 ms  (average mu = 0.633, current mu = 0.365) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 0000019D9EA5C3DF \r\n"
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[23076:000002157EEA5000]     6579 ms: Mark-Compact (reduce) 254.1 (257.0) -> 254.0 (256.0) MB, pooled: 0 MB, 3.25 / 0.00 ms  (+ 0.1 ms in 12 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 9 ms) (average mu = 0.862, curr[23076:000002157EEA5000]     6588 ms: Mark-Compact 255.0 (256.0) -> 254.9 (260.0) MB, pooled: 0 MB, 4.71 / 0.00 ms  (average mu = 0.756, current mu = 0.495) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 00000215195DC11F \r\n"
   }
 }

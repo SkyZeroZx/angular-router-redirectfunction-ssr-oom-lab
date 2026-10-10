@@ -4,41 +4,40 @@
   "angular": "22.2.2",
   "heapMiB": 256,
   "targetBytes": 16000,
-  "generator": "current",
   "requestBytes": 16000,
-  "refs": 1343,
-  "fillBytes": 7984,
+  "refs": 1341,
+  "fillBytes": 7981,
   "steps": [
     {
       "control": false,
       "concurrency": 1,
-      "totalMs": 2786,
+      "totalMs": 2289,
       "exit": null,
       "v8Oom": false,
       "ok302": 1,
-      "locationBytes": 32172897,
-      "locationHead": "/restaurant/x?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3",
-      "slowestMs": 2786,
+      "locationBytes": 32112927,
+      "locationHead": "/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D",
+      "slowestMs": 2289,
       "redirectCalls": 1,
       "stderrTail": ""
     },
     {
       "control": false,
       "concurrency": 2,
-      "totalMs": 4856,
+      "totalMs": 4259,
       "exit": null,
       "v8Oom": false,
       "ok302": 2,
-      "locationBytes": 32172897,
-      "locationHead": "/restaurant/x?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3",
-      "slowestMs": 4856,
+      "locationBytes": 32112927,
+      "locationHead": "/restaurant/a/menu/lunch?0=%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D",
+      "slowestMs": 4259,
       "redirectCalls": 2,
       "stderrTail": ""
     },
     {
       "control": false,
       "concurrency": 3,
-      "totalMs": 6116,
+      "totalMs": 5341,
       "exit": {
         "code": 134,
         "signal": null
@@ -47,22 +46,22 @@
       "ok302": 0,
       "locationBytes": 0,
       "locationHead": "",
-      "slowestMs": 6116,
+      "slowestMs": 5341,
       "redirectCalls": null,
-      "stderrTail": "failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 000001D31807E089 \r\n"
+      "stderrTail": "failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 000002E253237309 \r\n"
     }
   ],
   "minOomConcurrency": 3,
   "controlAtThreshold": {
     "control": true,
     "concurrency": 3,
-    "totalMs": 230,
+    "totalMs": 202,
     "exit": null,
     "v8Oom": false,
     "ok302": 3,
-    "locationBytes": 8047,
-    "locationHead": "/restaurant/x?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&7=@z&8=@z&9",
-    "slowestMs": 230,
+    "locationBytes": 8046,
+    "locationHead": "/restaurant/a/menu/lunch?0=@z&1=@z&2=@z&3=@z&4=@z&5=@z&6=@z&",
+    "slowestMs": 202,
     "redirectCalls": 3,
     "stderrTail": ""
   }

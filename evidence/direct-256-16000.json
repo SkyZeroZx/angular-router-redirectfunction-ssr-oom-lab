@@ -9,33 +9,33 @@
     "control": true,
     "concurrency": 3,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "status": 302,
-        "ms": 136,
-        "locationBytes": 8047
+        "ms": 130,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 203,
-        "locationBytes": 8047
+        "ms": 194,
+        "locationBytes": 8046
       },
       {
         "status": 302,
-        "ms": 207,
-        "locationBytes": 8047
+        "ms": 198,
+        "locationBytes": 8046
       }
     ],
     "health": {
       "status": 200,
-      "ms": 158,
+      "ms": 156,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 3,
       "redirectCalls": 3,
-      "heapUsedBytes": 21406296
+      "heapUsedBytes": 21398944
     },
     "exit": null,
     "v8Oom": false,
@@ -45,23 +45,23 @@
     "control": false,
     "concurrency": 1,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "status": 302,
-        "ms": 4009,
-        "locationBytes": 32172897
+        "ms": 3649,
+        "locationBytes": 32112927
       }
     ],
     "health": {
       "status": 200,
-      "ms": 2945,
+      "ms": 2751,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 112062400
+      "heapUsedBytes": 111855304
     },
     "exit": null,
     "v8Oom": false,
@@ -71,24 +71,24 @@
     "control": false,
     "concurrency": 3,
     "requestBytes": 16000,
-    "markers": 1343,
+    "markers": 1341,
     "responses": [
       {
         "error": "ECONNRESET",
-        "ms": 5686
+        "ms": 5295
       },
       {
         "error": "ECONNRESET",
-        "ms": 5686
+        "ms": 5295
       },
       {
         "error": "ECONNRESET",
-        "ms": 5686
+        "ms": 5295
       }
     ],
     "health": {
       "error": "ECONNRESET",
-      "ms": 5652
+      "ms": 5262
     },
     "stats": null,
     "exit": {
@@ -96,6 +96,6 @@
       "signal": null
     },
     "v8Oom": true,
-    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[2020:00000204376B8000]     5816 ms: Mark-Compact (reduce) 253.2 (261.8) -> 253.0 (256.6) MB, pooled: 0 MB, 3.10 / 0.00 ms  (+ 0.0 ms in 9 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 6 ms) (average mu = 0.910, curren[2020:00000204376B8000]     5825 ms: Mark-Compact 254.0 (256.6) -> 253.9 (260.6) MB, pooled: 0 MB, 4.85 / 0.00 ms  (average mu = 0.822, current mu = 0.489) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 000002044FF79089 \r\n"
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[17728:0000021547A6A000]     5330 ms: Mark-Compact (reduce) 252.8 (261.4) -> 252.6 (256.2) MB, pooled: 0 MB, 1.84 / 0.00 ms  (+ 0.0 ms in 9 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 5 ms) (average mu = 0.918, curre[17728:0000021547A6A000]     5337 ms: Mark-Compact 253.6 (256.2) -> 253.5 (260.2) MB, pooled: 0 MB, 3.13 / 0.00 ms  (average mu = 0.844, current mu = 0.600) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 00000215000947C9 \r\n"
   }
 }

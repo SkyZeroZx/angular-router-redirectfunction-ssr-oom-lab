@@ -35,9 +35,21 @@ function* keyNames() {
   for (const a of KEY_CHARS) for (const b of KEY_CHARS) for (const c of KEY_CHARS) yield a + b + c;
 }
 
-export function payload(targetBytes, control) {
+// Two heads, because the redirect's PATH decides whether its destination is routable
+// at all, and an unroutable destination is answered 404 without ever serializing the
+// tree, which is where the cost is.
+//
+//   'x%3F'                  -> /restaurant/x?<query>            2 segments, needs a
+//                              catch-all route to be reachable
+//   'a%2Fmenu%2Flunch%3F'   -> /restaurant/a/menu/lunch?<query>  matches the guide's own
+//                              destination route, so no catch-all is needed, but the
+//                              redirect route needs pathMatch: 'full' or it re-matches
+//                              by prefix and the chain drops the query
+const HEADS = { catchAll: '/restaurant/x%3F', destination: '/restaurant/a%2Fmenu%2Flunch%3F' };
+
+export function payload(targetBytes, control, land = 'destination') {
   const sigil = control ? '@' : ':';
-  const head = '/restaurant/x%3F';
+  const head = HEADS[land] ?? HEADS.catchAll;
   const tail = '/menu?z=';
   const meal = '&meal=x';
   // Half the budget buys references; `refBytes` is measured on the wire.

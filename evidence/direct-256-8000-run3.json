@@ -9,78 +9,78 @@
     "control": true,
     "concurrency": 12,
     "requestBytes": 8000,
-    "markers": 676,
+    "markers": 675,
     "responses": [
       {
         "status": 302,
-        "ms": 131,
-        "locationBytes": 4027
+        "ms": 120,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 326,
-        "locationBytes": 4027
+        "ms": 299,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 328,
-        "locationBytes": 4027
+        "ms": 301,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 330,
-        "locationBytes": 4027
+        "ms": 303,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 333,
-        "locationBytes": 4027
+        "ms": 305,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 335,
-        "locationBytes": 4027
+        "ms": 307,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 337,
-        "locationBytes": 4027
+        "ms": 308,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 340,
-        "locationBytes": 4027
+        "ms": 311,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 342,
-        "locationBytes": 4027
+        "ms": 312,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 344,
-        "locationBytes": 4027
+        "ms": 314,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 346,
-        "locationBytes": 4027
+        "ms": 316,
+        "locationBytes": 4032
       },
       {
         "status": 302,
-        "ms": 348,
-        "locationBytes": 4027
+        "ms": 318,
+        "locationBytes": 4032
       }
     ],
     "health": {
       "status": 200,
-      "ms": 281,
+      "ms": 256,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 12,
       "redirectCalls": 12,
-      "heapUsedBytes": 24882200
+      "heapUsedBytes": 25845648
     },
     "exit": null,
     "v8Oom": false,
@@ -90,23 +90,23 @@
     "control": false,
     "concurrency": 1,
     "requestBytes": 8000,
-    "markers": 676,
+    "markers": 675,
     "responses": [
       {
         "status": 302,
-        "ms": 753,
-        "locationBytes": 8086283
+        "ms": 772,
+        "locationBytes": 8056107
       }
     ],
     "health": {
       "status": 200,
-      "ms": 718,
+      "ms": 741,
       "locationBytes": 0
     },
     "stats": {
       "ssrRequests": 1,
       "redirectCalls": 1,
-      "heapUsedBytes": 39742984
+      "heapUsedBytes": 39659696
     },
     "exit": null,
     "v8Oom": false,
@@ -116,67 +116,68 @@
     "control": false,
     "concurrency": 12,
     "requestBytes": 8000,
-    "markers": 676,
+    "markers": 675,
     "responses": [
       {
         "status": 302,
         "ms": 763,
-        "locationBytes": 8086283
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 5690,
-        "locationBytes": 8086283
+        "ms": 5805,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 5827,
-        "locationBytes": 8086283
+        "ms": 5934,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 5968,
-        "locationBytes": 8086283
+        "ms": 6070,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 6108,
-        "locationBytes": 8086283
+        "ms": 6219,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 6241,
-        "locationBytes": 8086283
+        "ms": 6356,
+        "locationBytes": 8056107
       },
       {
         "status": 302,
-        "ms": 6380,
-        "locationBytes": 8086283
+        "ms": 6480,
+        "locationBytes": 8056107
+      },
+      {
+        "status": 302,
+        "ms": 6614,
+        "locationBytes": 8056107
       },
       {
         "error": "ECONNRESET",
-        "ms": 6486
+        "ms": 6626
       },
       {
         "error": "ECONNRESET",
-        "ms": 6486
+        "ms": 6626
       },
       {
         "error": "ECONNRESET",
-        "ms": 6486
+        "ms": 6626
       },
       {
         "error": "ECONNRESET",
-        "ms": 6486
-      },
-      {
-        "error": "ECONNRESET",
-        "ms": 6486
+        "ms": 6626
       }
     ],
     "health": {
       "status": 200,
-      "ms": 5383,
+      "ms": 5524,
       "locationBytes": 0
     },
     "stats": null,
@@ -185,6 +186,6 @@
       "signal": null
     },
     "v8Oom": true,
-    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[15880:0000023170968000]     6526 ms: Mark-Compact (reduce) 255.2 (259.0) -> 255.1 (257.5) MB, pooled: 0 MB, 2.98 / 0.00 ms  (+ 0.0 ms in 10 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 7 ms) (average mu = 0.819, curr\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE2518C9 v8::Unlocker::~Unlocker+9273\r\n 6: 00007FF6FDDC5EE2 v8::String::Value::~Value+142450\r\n 7: 00007FF6FF51F8FA v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422666\r\n 8: 00007FF6FF50A956 v8::base::UnsignedDivisionByConstant<unsigned __int64>+1336742\r\n 9: 000002311021F478 \r\n"
+    "stderrTail": "\r\n<--- Last few GCs --->\r\n\r\n[22964:000001BCD2906000]     6759 ms: Mark-Compact (reduce) 254.0 (257.5) -> 253.9 (256.0) MB, pooled: 0 MB, 2.44 / 0.00 ms  (+ 0.0 ms in 8 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 7 ms) (average mu = 0.876, curre[22964:000001BCD2906000]     6769 ms: Mark-Compact 254.9 (256.0) -> 254.8 (260.0) MB, pooled: 0 MB, 4.61 / 0.00 ms  (average mu = 0.765, current mu = 0.511) allocation failure; scavenge might not succeed\r\n\r\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\r\n----- Native stack trace -----\r\n\r\n 1: 00007FF6FD780CCF node::OnFatalError+1343\r\n 2: 00007FF6FE3CF697 v8::Function::NewInstance+423\r\n 3: 00007FF6FE1D00C7 v8::base::AddressSpaceReservation::AddressSpaceReservation+322071\r\n 4: 00007FF6FE1CDD66 v8::base::AddressSpaceReservation::AddressSpaceReservation+313014\r\n 5: 00007FF6FE1E83DA X509_STORE_set_cleanup+5098\r\n 6: 00007FF6FE1F4238 uv_timer_set_repeat+19096\r\n 7: 00007FF6FE20F11B uv_timer_set_repeat+129403\r\n 8: 00007FF6FDD59661 v8::internal::Version::GetSONAME+64705\r\n 9: 00007FF6FE390DBC EVP_MD_CTX_set_update_fn+518604\r\n10: 00007FF6FF51F83A v8::base::UnsignedDivisionByConstant<unsigned __int64>+1422474\r\n11: 000001BC8021BF9F \r\n"
   }
 }
